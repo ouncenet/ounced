@@ -1,9 +1,9 @@
 package protowire
 
 import (
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
-	"github.com/kaspanet/kaspad/util/mstime"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/infrastructure/network/netadapter/id"
+	"github.com/ouncenet/ounced/util/mstime"
 	"github.com/pkg/errors"
 )
 

@@ -1,9 +1,9 @@
 package difficultymanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/util/difficulty"
+	"github.com/ouncenet/ounced/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/util/difficulty"
 	"math"
 	"math/big"
 )

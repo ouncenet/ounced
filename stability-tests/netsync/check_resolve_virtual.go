@@ -2,8 +2,8 @@ package main
 
 import (
 	"fmt"
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/stability-tests/common/rpc"
 	"github.com/pkg/errors"
 	"time"
 )

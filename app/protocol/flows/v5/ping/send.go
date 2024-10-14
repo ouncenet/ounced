@@ -1,16 +1,16 @@
 package ping
 
 import (
-	"github.com/kaspanet/kaspad/app/protocol/common"
-	"github.com/kaspanet/kaspad/app/protocol/flowcontext"
+	"github.com/ouncenet/ounced/app/protocol/common"
+	"github.com/ouncenet/ounced/app/protocol/flowcontext"
 	"github.com/pkg/errors"
 	"time"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
-	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
-	"github.com/kaspanet/kaspad/util/random"
+	"github.com/ouncenet/ounced/app/appmessage"
+	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
+	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
+	"github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
+	"github.com/ouncenet/ounced/util/random"
 )
 
 // SendPingsContext is the interface for the context needed for the SendPings flow.

@@ -2,19 +2,19 @@ package main
 
 import (
 	"fmt"
-	"github.com/kaspanet/kaspad/domain/consensus"
+	"github.com/ouncenet/ounced/domain/consensus"
 	"os/exec"
 	"strings"
 	"sync/atomic"
 	"syscall"
 	"time"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/stability-tests/common/mine"
-	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
-	"github.com/kaspanet/kaspad/util"
-	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/stability-tests/common"
+	"github.com/ouncenet/ounced/stability-tests/common/mine"
+	"github.com/ouncenet/ounced/stability-tests/common/rpc"
+	"github.com/ouncenet/ounced/util"
+	"github.com/ouncenet/ounced/util/panics"
 	"github.com/pkg/errors"
 )
 

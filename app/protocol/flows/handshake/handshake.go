@@ -3,18 +3,18 @@ package handshake
 import (
 	"sync/atomic"
 
-	"github.com/kaspanet/kaspad/domain"
+	"github.com/ouncenet/ounced/domain"
 
-	"github.com/kaspanet/kaspad/app/protocol/common"
-	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
-	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/ouncenet/ounced/app/protocol/common"
+	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
+	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
 
-	"github.com/kaspanet/kaspad/infrastructure/config"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
+	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
-	routerpkg "github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/ouncenet/ounced/app/appmessage"
+	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
+	routerpkg "github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

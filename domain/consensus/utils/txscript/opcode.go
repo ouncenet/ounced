@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
+	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
 
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
 
 	"github.com/kaspanet/go-secp256k1"
 )

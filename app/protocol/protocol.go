@@ -1,20 +1,20 @@
 package protocol
 
 import (
-	"github.com/kaspanet/kaspad/app/protocol/common"
-	"github.com/kaspanet/kaspad/app/protocol/flows/ready"
-	"github.com/kaspanet/kaspad/app/protocol/flows/v5"
+	"github.com/ouncenet/ounced/app/protocol/common"
+	"github.com/ouncenet/ounced/app/protocol/flows/ready"
+	"github.com/ouncenet/ounced/app/protocol/flows/v5"
 	"sync"
 	"sync/atomic"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/app/protocol/flows/handshake"
-	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
-	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
-	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
-	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
-	routerpkg "github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/app/protocol/flows/handshake"
+	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
+	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
+	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
+	"github.com/ouncenet/ounced/infrastructure/network/connmanager"
+	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
+	routerpkg "github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

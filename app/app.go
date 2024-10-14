@@ -7,17 +7,17 @@ import (
 	"runtime"
 	"time"
 
-	"github.com/kaspanet/kaspad/infrastructure/config"
-	"github.com/kaspanet/kaspad/infrastructure/db/database"
-	"github.com/kaspanet/kaspad/infrastructure/db/database/ldb"
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	"github.com/kaspanet/kaspad/infrastructure/os/execenv"
-	"github.com/kaspanet/kaspad/infrastructure/os/limits"
-	"github.com/kaspanet/kaspad/infrastructure/os/signal"
-	"github.com/kaspanet/kaspad/infrastructure/os/winservice"
-	"github.com/kaspanet/kaspad/util/panics"
-	"github.com/kaspanet/kaspad/util/profiling"
-	"github.com/kaspanet/kaspad/version"
+	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/ouncenet/ounced/infrastructure/db/database"
+	"github.com/ouncenet/ounced/infrastructure/db/database/ldb"
+	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/ouncenet/ounced/infrastructure/os/execenv"
+	"github.com/ouncenet/ounced/infrastructure/os/limits"
+	"github.com/ouncenet/ounced/infrastructure/os/signal"
+	"github.com/ouncenet/ounced/infrastructure/os/winservice"
+	"github.com/ouncenet/ounced/util/panics"
+	"github.com/ouncenet/ounced/util/profiling"
+	"github.com/ouncenet/ounced/version"
 )
 
 const (

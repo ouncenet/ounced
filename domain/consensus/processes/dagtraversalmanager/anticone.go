@@ -1,9 +1,9 @@
 package dagtraversalmanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/hashset"
+	"github.com/ouncenet/ounced/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/utils/hashset"
 	"github.com/pkg/errors"
 )
 

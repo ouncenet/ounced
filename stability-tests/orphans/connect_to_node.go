@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kaspanet/kaspad/infrastructure/config"
-	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/standalone"
+	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/ouncenet/ounced/infrastructure/network/netadapter/standalone"
 )
 
 func connectToNode() *standalone.Routes {

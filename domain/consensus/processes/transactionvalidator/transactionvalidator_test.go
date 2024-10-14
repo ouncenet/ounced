@@ -2,20 +2,20 @@ package transactionvalidator_test
 
 import (
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/ouncenet/ounced/domain/consensus"
+	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
+	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
+	"github.com/ouncenet/ounced/domain/consensus/utils/testutils"
+	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
+	"github.com/ouncenet/ounced/domain/consensus/utils/utxo"
+	"github.com/ouncenet/ounced/util"
 
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
+	"github.com/ouncenet/ounced/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"
 )
 
