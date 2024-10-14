@@ -4,13 +4,13 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	"github.com/kaspanet/kaspad/util/math"
+	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/ouncenet/ounced/util/math"
 
-	"github.com/kaspanet/kaspad/util/difficulty"
+	"github.com/ouncenet/ounced/util/difficulty"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 )
 
 // DifficultyManager provides a method to resolve the

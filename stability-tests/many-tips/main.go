@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/mining"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/domain/consensus/utils/mining"
+	"github.com/ouncenet/ounced/util"
 	"math/rand"
 	"os"
 	"os/exec"
@@ -15,10 +15,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
-	"github.com/kaspanet/kaspad/util/panics"
-	"github.com/kaspanet/kaspad/util/profiling"
+	"github.com/ouncenet/ounced/stability-tests/common"
+	"github.com/ouncenet/ounced/stability-tests/common/rpc"
+	"github.com/ouncenet/ounced/util/panics"
+	"github.com/ouncenet/ounced/util/profiling"
 	"github.com/pkg/errors"
 )
 

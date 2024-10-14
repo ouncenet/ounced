@@ -8,20 +8,20 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/kaspanet/kaspad/version"
+	"github.com/ouncenet/ounced/version"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 
-	"github.com/kaspanet/kaspad/util/txmass"
+	"github.com/ouncenet/ounced/util/txmass"
 
-	"github.com/kaspanet/kaspad/util/profiling"
+	"github.com/ouncenet/ounced/util/profiling"
 
-	"github.com/kaspanet/kaspad/cmd/kaspawallet/daemon/pb"
-	"github.com/kaspanet/kaspad/cmd/kaspawallet/keys"
-	"github.com/kaspanet/kaspad/domain/dagconfig"
-	"github.com/kaspanet/kaspad/infrastructure/network/rpcclient"
-	"github.com/kaspanet/kaspad/infrastructure/os/signal"
-	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/kaspawallet/keys"
+	"github.com/ouncenet/ounced/domain/dagconfig"
+	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
+	"github.com/ouncenet/ounced/infrastructure/os/signal"
+	"github.com/ouncenet/ounced/util/panics"
 	"github.com/pkg/errors"
 
 	"google.golang.org/grpc"

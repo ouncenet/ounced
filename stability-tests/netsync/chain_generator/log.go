@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	"github.com/kaspanet/kaspad/stability-tests/common"
-	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/ouncenet/ounced/stability-tests/common"
+	"github.com/ouncenet/ounced/util/panics"
 )
 
 var (

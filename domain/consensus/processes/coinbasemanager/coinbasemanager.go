@@ -1,13 +1,13 @@
 package coinbasemanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/hashset"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionhelper"
-	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/ouncenet/ounced/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/ouncenet/ounced/domain/consensus/utils/hashset"
+	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
+	"github.com/ouncenet/ounced/domain/consensus/utils/transactionhelper"
+	"github.com/ouncenet/ounced/infrastructure/db/database"
 	"github.com/pkg/errors"
 	"math"
 )

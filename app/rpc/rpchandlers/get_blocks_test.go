@@ -5,18 +5,18 @@ import (
 	"sort"
 	"testing"
 
-	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/app/rpc/rpccontext"
-	"github.com/kaspanet/kaspad/app/rpc/rpchandlers"
-	"github.com/kaspanet/kaspad/domain/consensus"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/model/testapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/hashes"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
-	"github.com/kaspanet/kaspad/domain/miningmanager"
-	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/app/rpc/rpccontext"
+	"github.com/ouncenet/ounced/app/rpc/rpchandlers"
+	"github.com/ouncenet/ounced/domain/consensus"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/model/testapi"
+	"github.com/ouncenet/ounced/domain/consensus/utils/hashes"
+	"github.com/ouncenet/ounced/domain/consensus/utils/testutils"
+	"github.com/ouncenet/ounced/domain/miningmanager"
+	"github.com/ouncenet/ounced/infrastructure/config"
 )
 
 type fakeDomain struct {

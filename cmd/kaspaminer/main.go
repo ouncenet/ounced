@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/kaspanet/kaspad/util"
+	"github.com/ouncenet/ounced/util"
 
-	"github.com/kaspanet/kaspad/version"
+	"github.com/ouncenet/ounced/version"
 
 	"github.com/pkg/errors"
 
 	_ "net/http/pprof"
 
-	"github.com/kaspanet/kaspad/infrastructure/os/signal"
-	"github.com/kaspanet/kaspad/util/panics"
-	"github.com/kaspanet/kaspad/util/profiling"
+	"github.com/ouncenet/ounced/infrastructure/os/signal"
+	"github.com/ouncenet/ounced/util/panics"
+	"github.com/ouncenet/ounced/util/profiling"
 )
 
 func main() {

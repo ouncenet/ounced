@@ -1,4 +1,4 @@
-module github.com/kaspanet/kaspad
+module github.com/ouncenet/ounced
 
 go 1.18
 

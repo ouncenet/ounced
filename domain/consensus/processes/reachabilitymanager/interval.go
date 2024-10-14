@@ -1,7 +1,7 @@
 package reachabilitymanager
 
 import (
-	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/ouncenet/ounced/domain/consensus/model"
 	"github.com/pkg/errors"
 	"math"
 )

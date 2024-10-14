@@ -4,12 +4,12 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/kaspanet/kaspad/app/appmessage"
-	"github.com/kaspanet/kaspad/infrastructure/logger"
-	routerpkg "github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
-	"github.com/kaspanet/kaspad/infrastructure/network/rpcclient/grpcclient"
-	"github.com/kaspanet/kaspad/util/panics"
-	"github.com/kaspanet/kaspad/version"
+	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/ouncenet/ounced/infrastructure/logger"
+	routerpkg "github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
+	"github.com/ouncenet/ounced/infrastructure/network/rpcclient/grpcclient"
+	"github.com/ouncenet/ounced/util/panics"
+	"github.com/ouncenet/ounced/version"
 	"github.com/pkg/errors"
 )
 

@@ -1,13 +1,13 @@
 package libkaspawallet
 
 import (
-	"github.com/kaspanet/kaspad/cmd/kaspawallet/libkaspawallet/bip32"
-	"github.com/kaspanet/kaspad/cmd/kaspawallet/libkaspawallet/serialization"
-	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
-	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
-	"github.com/kaspanet/kaspad/util"
+	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/bip32"
+	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization"
+	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
+	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
+	"github.com/ouncenet/ounced/util"
 	"github.com/pkg/errors"
 )
 
