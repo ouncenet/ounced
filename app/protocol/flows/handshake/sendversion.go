@@ -12,11 +12,11 @@ import (
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other kaspa peers.
+	// ourselves to other ounce peers.
 	userAgentName = "kaspad"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other kaspa peers.
+	// identify ourselves to other ounce peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by
