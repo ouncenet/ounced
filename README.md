@@ -1,17 +1,17 @@
 # DEPRECATED
 
-The full node reference implementation was [rewritten in Rust](https://github.com/kaspanet/rusty-kaspa), as a result, the Go implementation is now deprecated.
+The full node reference implementation was [rewritten in Rust](https://github.com/ouncenet/rusty-ounce), as a result, the Go implementation is now deprecated.
 
-PLEASE NOTE: Any pull requests or issues that will be opened in this repository will be closed without treatment, except for issues or pull requests related to the ouncewallet, which remains maintained. In any other case, please use the [Rust implementation](https://github.com/kaspanet/rusty-kaspa) instead.
+PLEASE NOTE: Any pull requests or issues that will be opened in this repository will be closed without treatment, except for issues or pull requests related to the ouncewallet, which remains maintained. In any other case, please use the [Rust implementation](https://github.com/ouncenet/rusty-ounce) instead.
 
 # Ounced
 
 [![ISC License](http://img.shields.io/badge/license-ISC-blue.svg)](https://choosealicense.com/licenses/isc/)
-[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/kaspanet/ounced)
+[![GoDoc](https://img.shields.io/badge/godoc-reference-blue.svg)](http://godoc.org/github.com/ouncenet/ounced)
 
 Ounced was the reference full node Ounce implementation written in Go (golang).
 
-## What is kaspa
+## What is ounce
 
 Ounce is an attempt at a proof-of-work cryptocurrency with instant confirmations and sub-second block times. It is based on [the PHANTOM protocol](https://eprint.iacr.org/2018/104.pdf), a generalization of Nakamoto consensus.
 
@@ -35,7 +35,7 @@ $ go version
 - Run the following commands to obtain and install ounced including all dependencies:
 
 ```bash
-$ git clone https://github.com/kaspanet/ounced
+$ git clone https://github.com/ouncenet/ounced
 $ cd ounced
 $ go install . ./cmd/...
 ```
@@ -59,14 +59,14 @@ Join our discord server using the following link: https://discord.gg/YNYnNN5Pf2
 
 ## Issue Tracker
 
-The [integrated github issue tracker](https://github.com/kaspanet/ounced/issues)
+The [integrated github issue tracker](https://github.com/ouncenet/ounced/issues)
 is used for this project.
 
-Issue priorities may be seen at https://github.com/orgs/kaspanet/projects/4
+Issue priorities may be seen at https://github.com/orgs/ouncenet/projects/4
 
 ## Documentation
 
-The [documentation](https://github.com/kaspanet/docs) is a work-in-progress
+The [documentation](https://github.com/ouncenet/docs) is a work-in-progress
 
 ## License
 

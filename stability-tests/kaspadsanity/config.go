@@ -8,8 +8,8 @@ import (
 )
 
 const (
-	defaultLogFilename    = "kaspadsanity.log"
-	defaultErrLogFilename = "kaspadsanity_err.log"
+	defaultLogFilename    = "ouncedsanity.log"
+	defaultErrLogFilename = "ouncedsanity_err.log"
 )
 
 var (
