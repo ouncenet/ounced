@@ -14,7 +14,7 @@ import (
 	"github.com/ouncenet/ounced/util"
 )
 
-// This example demonstrates creating a script which pays to a kaspa address.
+// This example demonstrates creating a script which pays to a ounce address.
 // It also prints the created script hex and uses the DisasmString function to
 // display the disassembled script.
 func ExamplePayToAddrScript() {
