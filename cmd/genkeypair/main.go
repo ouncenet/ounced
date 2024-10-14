@@ -2,7 +2,7 @@ package main
 
 import (
 	"fmt"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
 	"github.com/ouncenet/ounced/util"
 )
 
@@ -12,7 +12,7 @@ func main() {
 		panic(err)
 	}
 
-	privateKey, publicKey, err := libkaspawallet.CreateKeyPair(false)
+	privateKey, publicKey, err := libouncewallet.CreateKeyPair(false)
 	if err != nil {
 		panic(err)
 	}
