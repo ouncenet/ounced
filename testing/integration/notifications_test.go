@@ -3,7 +3,7 @@ package integration
 import (
 	"testing"
 
-	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/kaspanet/kaspad/app/appmessage"
 )
 
 func setOnBlockAddedHandler(t *testing.T, harness *appHarness, handler func(notification *appmessage.BlockAddedNotificationMessage)) {

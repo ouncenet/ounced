@@ -4,18 +4,18 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/util/mstime"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
-	"github.com/ouncenet/ounced/domain"
+	"github.com/kaspanet/kaspad/domain"
 
-	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/connmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/id"
+	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
 )
 
 // OnNewBlockTemplateHandler is a handler function that's triggered when a new block template is available

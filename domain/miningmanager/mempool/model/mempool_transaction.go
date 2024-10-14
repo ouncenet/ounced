@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
 )
 
 // MempoolTransaction represents a transaction inside the main TransactionPool

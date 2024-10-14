@@ -1,7 +1,7 @@
 package integration
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
 	"testing"
 )
 

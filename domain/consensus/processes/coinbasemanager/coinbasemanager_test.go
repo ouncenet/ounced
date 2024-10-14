@@ -1,9 +1,9 @@
 package coinbasemanager
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
-	"github.com/ouncenet/ounced/domain/dagconfig"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
 	"strconv"
 	"testing"
 )

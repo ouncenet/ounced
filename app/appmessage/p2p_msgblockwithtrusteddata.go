@@ -1,11 +1,11 @@
 package appmessage
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 	"math/big"
 )
 
-// MsgBlockWithTrustedData represents a ounce BlockWithTrustedData message
+// MsgBlockWithTrustedData represents a kaspa BlockWithTrustedData message
 type MsgBlockWithTrustedData struct {
 	baseMessage
 

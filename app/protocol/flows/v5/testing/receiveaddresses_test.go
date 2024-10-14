@@ -1,16 +1,16 @@
 package testing
 
 import (
-	"github.com/ouncenet/ounced/app/protocol/flows/v5/addressexchange"
+	"github.com/kaspanet/kaspad/app/protocol/flows/v5/addressexchange"
 	"testing"
 	"time"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
-	"github.com/ouncenet/ounced/domain/consensus"
-	"github.com/ouncenet/ounced/domain/consensus/utils/testutils"
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
+	"github.com/kaspanet/kaspad/domain/consensus"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
 )
 
 type fakeReceiveAddressesContext struct{}

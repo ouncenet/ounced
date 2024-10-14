@@ -1,10 +1,10 @@
 package consensusstatemanager
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
 )
 
 // PopulateTransactionWithUTXOEntries populates the transaction UTXO entries with data from the virtual's UTXO set.

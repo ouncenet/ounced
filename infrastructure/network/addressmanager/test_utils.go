@@ -4,8 +4,8 @@ import (
 	"net"
 	"strconv"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 	"github.com/pkg/errors"
 )
 

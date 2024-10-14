@@ -5,8 +5,8 @@ import (
 	"os"
 	"strconv"
 
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/stability-tests/common/mine"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/stability-tests/common/mine"
 	"github.com/pkg/errors"
 )
 

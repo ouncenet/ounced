@@ -1,7 +1,7 @@
 package hashes
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
 // ToStrings converts a slice of hashes into a slice of the corresponding strings

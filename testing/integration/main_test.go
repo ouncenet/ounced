@@ -1,7 +1,7 @@
 package integration
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"os"
 	"testing"
 )

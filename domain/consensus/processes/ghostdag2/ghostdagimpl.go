@@ -3,12 +3,12 @@ package ghostdag2
 import (
 	"sort"
 
-	"github.com/ouncenet/ounced/util/difficulty"
+	"github.com/kaspanet/kaspad/util/difficulty"
 
 	"math/big"
 
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
 type ghostdagHelper struct {

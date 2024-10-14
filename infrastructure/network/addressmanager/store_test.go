@@ -1,8 +1,8 @@
 package addressmanager
 
 import (
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/util/mstime"
 	"net"
 	"reflect"
 	"testing"

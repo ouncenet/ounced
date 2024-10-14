@@ -4,8 +4,8 @@ import (
 	"math"
 	"math/rand"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/pow"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/pow"
 	"github.com/pkg/errors"
 )
 

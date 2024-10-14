@@ -3,12 +3,12 @@ package consensusstatemanager
 import (
 	"fmt"
 
-	"github.com/ouncenet/ounced/util/staging"
+	"github.com/kaspanet/kaspad/util/staging"
 
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

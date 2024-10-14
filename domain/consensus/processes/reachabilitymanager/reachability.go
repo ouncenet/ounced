@@ -1,8 +1,8 @@
 package reachabilitymanager
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
 // IsDAGAncestorOf returns true if blockHashA is an ancestor of

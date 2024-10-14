@@ -1,10 +1,10 @@
 package appmessage
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocatorHighestHash represents a ounce BlockLocatorHighestHash message
+// MsgIBDBlockLocatorHighestHash represents a kaspa BlockLocatorHighestHash message
 type MsgIBDBlockLocatorHighestHash struct {
 	baseMessage
 	HighestHash *externalapi.DomainHash

@@ -3,12 +3,12 @@ package protowire
 import (
 	"math"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
-	"github.com/ouncenet/ounced/domain/consensus/utils/transactionid"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionid"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/util/mstime"
 	"github.com/pkg/errors"
 )
 

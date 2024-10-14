@@ -3,10 +3,10 @@ package rpc
 import (
 	"time"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/infrastructure/network/rpcclient"
 
-	"github.com/ouncenet/ounced/domain/dagconfig"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
 )
 
 const defaultRPCServer = "localhost"

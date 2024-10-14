@@ -10,7 +10,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ouncenet/ounced/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
 )
 
 func TestTransactionPut(t *testing.T) {

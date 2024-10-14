@@ -5,8 +5,8 @@ import (
 	"os/exec"
 	"strings"
 
-	"github.com/ouncenet/ounced/domain/dagconfig"
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 
@@ -26,7 +26,7 @@ func StartCmd(name string, args ...string) (*exec.Cmd, error) {
 	return cmd, nil
 }
 
-// NetworkCliArgumentFromNetParams returns the ounced command line argument that starts the given network.
+// NetworkCliArgumentFromNetParams returns the kaspad command line argument that starts the given network.
 func NetworkCliArgumentFromNetParams(params *dagconfig.Params) string {
-	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "ounce-"))
+	return fmt.Sprintf("--%s", strings.TrimPrefix(params.Name, "kaspa-"))
 }

@@ -5,13 +5,13 @@
 package addressmanager
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/db/database"
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/util/mstime"
 	"net"
 	"sync"
 	"time"
 
-	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/kaspanet/kaspad/app/appmessage"
 	"github.com/pkg/errors"
 )
 

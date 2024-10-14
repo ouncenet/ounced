@@ -1,10 +1,10 @@
 package consensusstatestore
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/utxolrucache"
-	"github.com/ouncenet/ounced/util/staging"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/utxolrucache"
+	"github.com/kaspanet/kaspad/util/staging"
 )
 
 var importingPruningPointUTXOSetKeyName = []byte("importing-pruning-point-utxo-set")

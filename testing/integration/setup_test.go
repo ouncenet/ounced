@@ -4,14 +4,14 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/ouncenet/ounced/domain/dagconfig"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
 
-	"github.com/ouncenet/ounced/infrastructure/db/database/ldb"
+	"github.com/kaspanet/kaspad/infrastructure/db/database/ldb"
 
-	"github.com/ouncenet/ounced/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
 
-	"github.com/ouncenet/ounced/app"
-	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/kaspanet/kaspad/app"
+	"github.com/kaspanet/kaspad/infrastructure/config"
 )
 
 type appHarness struct {

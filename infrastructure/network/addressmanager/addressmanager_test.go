@@ -9,10 +9,10 @@ import (
 	"reflect"
 	"testing"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/db/database/ldb"
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/db/database/ldb"
+	"github.com/kaspanet/kaspad/util/mstime"
 )
 
 func newAddressManagerForTest(t *testing.T, testName string) (addressManager *AddressManager, teardown func()) {

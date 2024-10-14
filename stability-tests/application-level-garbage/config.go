@@ -4,11 +4,11 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/ouncenet/ounced/infrastructure/logger"
-	"github.com/ouncenet/ounced/stability-tests/common"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspanet/kaspad/stability-tests/common"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/config"
 )
 
 const (

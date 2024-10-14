@@ -11,11 +11,11 @@ import (
 	"fmt"
 	"hash"
 
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
 
 	"golang.org/x/crypto/blake2b"
 
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
 
 	"github.com/kaspanet/go-secp256k1"
 )
@@ -31,7 +31,7 @@ type opcode struct {
 	opfunc func(*parsedOpcode, *Engine) error
 }
 
-// These constants are the values of the ounce script opcodes.
+// These constants are the values of the kaspa script opcodes.
 const (
 	Op0                   = 0x00 // 0
 	OpFalse               = 0x00 // 0 - AKA Op0

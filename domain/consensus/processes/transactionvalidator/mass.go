@@ -1,7 +1,7 @@
 package transactionvalidator
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
 // PopulateMass calculates and populates the mass of the given transaction

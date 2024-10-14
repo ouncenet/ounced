@@ -4,11 +4,11 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/standalone"
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/util/panics"
-	"github.com/ouncenet/ounced/util/profiling"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/standalone"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/util/panics"
+	"github.com/kaspanet/kaspad/util/profiling"
 )
 
 func main() {
@@ -25,10 +25,10 @@ func main() {
 		profiling.Start(cfg.Profile, log)
 	}
 
-	ouncedConfig := config.DefaultConfig()
-	ouncedConfig.NetworkFlags = cfg.NetworkFlags
+	kaspadConfig := config.DefaultConfig()
+	kaspadConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(ouncedConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(kaspadConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "Error creating minimalNetAdapter: %+v", err)
 		backendLog.Close()

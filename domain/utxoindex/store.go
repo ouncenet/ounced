@@ -3,10 +3,10 @@ package utxoindex
 import (
 	"encoding/binary"
 
-	"github.com/ouncenet/ounced/domain/consensus/database/binaryserialization"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/infrastructure/db/database"
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/domain/consensus/database/binaryserialization"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

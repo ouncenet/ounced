@@ -5,8 +5,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ouncenet/ounced/domain/dagconfig"
-	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
+	"github.com/kaspanet/kaspad/infrastructure/config"
 )
 
 const (

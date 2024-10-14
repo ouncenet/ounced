@@ -5,10 +5,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/ouncenet/ounced/domain/consensus/utils/reachabilitydata"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/reachabilitydata"
 
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
 	"github.com/pkg/errors"
 )

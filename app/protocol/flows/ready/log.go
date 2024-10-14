@@ -1,8 +1,8 @@
 package ready
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/logger"
-	"github.com/ouncenet/ounced/util/panics"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspanet/kaspad/util/panics"
 )
 
 var log = logger.RegisterSubSystem("PROT")

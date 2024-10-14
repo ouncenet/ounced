@@ -1,22 +1,22 @@
 package handshake
 
 import (
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/app/protocol/common"
-	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
-	"github.com/ouncenet/ounced/infrastructure/logger"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
-	"github.com/ouncenet/ounced/version"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/app/protocol/common"
+	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/kaspanet/kaspad/version"
 	"github.com/pkg/errors"
 )
 
 var (
 	// userAgentName is the user agent name and is used to help identify
-	// ourselves to other ounce peers.
-	userAgentName = "ounced"
+	// ourselves to other kaspa peers.
+	userAgentName = "kaspad"
 
 	// userAgentVersion is the user agent version and is used to help
-	// identify ourselves to other ounce peers.
+	// identify ourselves to other kaspa peers.
 	userAgentVersion = version.Version()
 
 	// defaultServices describes the default services that are supported by

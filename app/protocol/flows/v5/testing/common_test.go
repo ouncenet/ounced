@@ -4,7 +4,7 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
+	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
 	"github.com/pkg/errors"
 )
 

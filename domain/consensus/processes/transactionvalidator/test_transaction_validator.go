@@ -1,9 +1,9 @@
 package transactionvalidator
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/testapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/testapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
 )
 
 type testTransactionValidator struct {

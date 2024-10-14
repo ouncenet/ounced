@@ -4,22 +4,22 @@ import (
 	"fmt"
 	"sync/atomic"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
-	"github.com/ouncenet/ounced/domain/miningmanager/mempool"
+	"github.com/kaspanet/kaspad/domain/miningmanager/mempool"
 
-	"github.com/ouncenet/ounced/app/protocol"
-	"github.com/ouncenet/ounced/app/rpc"
-	"github.com/ouncenet/ounced/domain"
-	"github.com/ouncenet/ounced/domain/consensus"
-	"github.com/ouncenet/ounced/domain/utxoindex"
-	"github.com/ouncenet/ounced/infrastructure/config"
-	infrastructuredatabase "github.com/ouncenet/ounced/infrastructure/db/database"
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/connmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/id"
-	"github.com/ouncenet/ounced/util/panics"
+	"github.com/kaspanet/kaspad/app/protocol"
+	"github.com/kaspanet/kaspad/app/rpc"
+	"github.com/kaspanet/kaspad/domain"
+	"github.com/kaspanet/kaspad/domain/consensus"
+	"github.com/kaspanet/kaspad/domain/utxoindex"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	infrastructuredatabase "github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
+	"github.com/kaspanet/kaspad/util/panics"
 )
 
 // ComponentManager is a wrapper for all the kaspad services

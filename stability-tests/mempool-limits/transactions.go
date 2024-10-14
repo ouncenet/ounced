@@ -6,22 +6,22 @@ import (
 	"testing"
 
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
-	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
-	"github.com/ouncenet/ounced/domain/consensus/utils/transactionhelper"
-	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
-	utxopkg "github.com/ouncenet/ounced/domain/consensus/utils/utxo"
-	"github.com/ouncenet/ounced/domain/dagconfig"
-	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
-	"github.com/ouncenet/ounced/stability-tests/common/mine"
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionhelper"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
+	utxopkg "github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
+	"github.com/kaspanet/kaspad/domain/dagconfig"
+	"github.com/kaspanet/kaspad/infrastructure/network/rpcclient"
+	"github.com/kaspanet/kaspad/stability-tests/common/mine"
+	"github.com/kaspanet/kaspad/util"
 )
 
 const (
-	payAddress                       = "ouncesim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
+	payAddress                       = "kaspasim:qzuax2jhawd354e54thhpd9m9wg03pdzwjlpr4vtq3k7xrpumhhtwa2hkr3ep"
 	payAddressPrivateKey             = "05d8f681e954a550395ee2297fc1a14f6e801f554c0b9d48cd7165a7ea72ff77"
 	fundingCoinbaseTransactionAmount = 1000
 	outputsPerTransaction            = 3

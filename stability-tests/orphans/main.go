@@ -7,9 +7,9 @@ import (
 
 	"github.com/pkg/errors"
 
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/stability-tests/common/rpc"
-	"github.com/ouncenet/ounced/util/profiling"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
+	"github.com/kaspanet/kaspad/util/profiling"
 )
 
 var timeout = 30 * time.Second
@@ -49,7 +49,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	// Wait a second to let ounced process orphans
+	// Wait a second to let kaspad process orphans
 	<-time.After(1 * time.Second)
 
 	err = checkTopBlockIsTip(rpcClient, topBlock)

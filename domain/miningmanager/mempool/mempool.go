@@ -3,15 +3,15 @@ package mempool
 import (
 	"sync"
 
-	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
 	"github.com/pkg/errors"
 
-	"github.com/ouncenet/ounced/domain/consensusreference"
+	"github.com/kaspanet/kaspad/domain/consensusreference"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	miningmanagermodel "github.com/ouncenet/ounced/domain/miningmanager/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	miningmanagermodel "github.com/kaspanet/kaspad/domain/miningmanager/model"
 )
 
 type mempool struct {

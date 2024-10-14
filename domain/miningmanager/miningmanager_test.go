@@ -1,28 +1,28 @@
 package miningmanager_test
 
 import (
-	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
-	"github.com/ouncenet/ounced/domain/consensusreference"
-	"github.com/ouncenet/ounced/domain/miningmanager/model"
-	"github.com/ouncenet/ounced/util"
-	"github.com/ouncenet/ounced/version"
+	"github.com/kaspanet/kaspad/cmd/kaspawallet/libkaspawallet"
+	"github.com/kaspanet/kaspad/domain/consensusreference"
+	"github.com/kaspanet/kaspad/domain/miningmanager/model"
+	"github.com/kaspanet/kaspad/util"
+	"github.com/kaspanet/kaspad/version"
 	"reflect"
 	"strings"
 	"testing"
 
-	"github.com/ouncenet/ounced/domain/miningmanager/mempool"
+	"github.com/kaspanet/kaspad/domain/miningmanager/mempool"
 
-	"github.com/ouncenet/ounced/domain/consensus"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/model/testapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
-	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
-	"github.com/ouncenet/ounced/domain/consensus/utils/testutils"
-	"github.com/ouncenet/ounced/domain/consensus/utils/transactionhelper"
-	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
-	"github.com/ouncenet/ounced/domain/consensus/utils/utxo"
-	"github.com/ouncenet/ounced/domain/miningmanager"
+	"github.com/kaspanet/kaspad/domain/consensus"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/testapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/subnetworks"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/transactionhelper"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/utxo"
+	"github.com/kaspanet/kaspad/domain/miningmanager"
 	"github.com/pkg/errors"
 )
 
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libouncewallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libkaspawallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}

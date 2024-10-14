@@ -1,13 +1,13 @@
 package blockvalidator
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
-	"github.com/ouncenet/ounced/domain/consensus/utils/pow"
-	"github.com/ouncenet/ounced/domain/consensus/utils/virtual"
-	"github.com/ouncenet/ounced/infrastructure/db/database"
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/pow"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/virtual"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"github.com/pkg/errors"
 )
 

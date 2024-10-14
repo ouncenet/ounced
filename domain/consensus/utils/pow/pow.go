@@ -1,11 +1,11 @@
 package pow
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
-	"github.com/ouncenet/ounced/domain/consensus/utils/hashes"
-	"github.com/ouncenet/ounced/domain/consensus/utils/serialization"
-	"github.com/ouncenet/ounced/util/difficulty"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/consensushashing"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/hashes"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/serialization"
+	"github.com/kaspanet/kaspad/util/difficulty"
 
 	"github.com/pkg/errors"
 	"math/big"

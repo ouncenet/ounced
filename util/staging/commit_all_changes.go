@@ -1,8 +1,8 @@
 package staging
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/infrastructure/logger"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
 	"sync/atomic"
 )
 

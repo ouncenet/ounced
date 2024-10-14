@@ -4,17 +4,17 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/standalone"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/standalone"
 )
 
 func connectToNode() *standalone.Routes {
 	cfg := activeConfig()
 
-	ouncedConfig := config.DefaultConfig()
-	ouncedConfig.NetworkFlags = cfg.NetworkFlags
+	kaspadConfig := config.DefaultConfig()
+	kaspadConfig.NetworkFlags = cfg.NetworkFlags
 
-	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(ouncedConfig)
+	minimalNetAdapter, err := standalone.NewMinimalNetAdapter(kaspadConfig)
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error creating minimalNetAdapter: %+v", err)
 		os.Exit(1)

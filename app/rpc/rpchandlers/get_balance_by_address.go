@@ -1,11 +1,11 @@
 package rpchandlers
 
 import (
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/app/rpc/rpccontext"
-	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/app/rpc/rpccontext"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
+	"github.com/kaspanet/kaspad/util"
 	"github.com/pkg/errors"
 )
 

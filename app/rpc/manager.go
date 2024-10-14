@@ -1,17 +1,17 @@
 package rpc
 
 import (
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/app/protocol"
-	"github.com/ouncenet/ounced/app/rpc/rpccontext"
-	"github.com/ouncenet/ounced/domain"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/utxoindex"
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/logger"
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/connmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/app/protocol"
+	"github.com/kaspanet/kaspad/app/rpc/rpccontext"
+	"github.com/kaspanet/kaspad/domain"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/utxoindex"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/logger"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
 	"github.com/pkg/errors"
 )
 

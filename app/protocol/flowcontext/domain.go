@@ -1,7 +1,7 @@
 package flowcontext
 
 import (
-	"github.com/ouncenet/ounced/domain"
+	"github.com/kaspanet/kaspad/domain"
 )
 
 // Domain returns the Domain object associated to the flow context.

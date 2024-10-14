@@ -1,7 +1,7 @@
 package flowcontext
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
 )
 
 // AddressManager returns the address manager associated to the flow context.

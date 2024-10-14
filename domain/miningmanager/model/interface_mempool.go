@@ -1,8 +1,8 @@
 package model
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/ruleerrors"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/ruleerrors"
 )
 
 // Mempool maintains a set of known transactions that

@@ -4,10 +4,10 @@ import (
 	"time"
 
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/stability-tests/common/rpc"
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/stability-tests/common/rpc"
+	"github.com/kaspanet/kaspad/util"
 	"github.com/pkg/errors"
 )
 
@@ -32,7 +32,7 @@ func mineLoop(syncerRPCClient, syncedRPCClient *rpc.Client) error {
 		err = mineBlock(syncerRPCClient.Address(), miningAddr)
 		if err != nil {
 			// Ignore error and instead check that the block count changed correctly.
-			// TODO: Fix the race condition in ounceminer so it won't panic (proper shutdown handler)
+			// TODO: Fix the race condition in kaspaminer so it won't panic (proper shutdown handler)
 			log.Warnf("mineBlock returned an err: %s", err)
 		}
 
@@ -129,8 +129,8 @@ func areTipsAreEqual(resultA, resultB *appmessage.GetBlockDAGInfoResponseMessage
 }
 
 func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
-	ounceMinerCmd, err := common.StartCmd("MINER",
-		"ounceminer",
+	kaspaMinerCmd, err := common.StartCmd("MINER",
+		"kaspaminer",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"-s", syncerRPCAddress,
 		"--mine-when-not-synced",
@@ -140,5 +140,5 @@ func mineBlock(syncerRPCAddress string, miningAddress util.Address) error {
 	if err != nil {
 		return err
 	}
-	return errors.Wrapf(ounceMinerCmd.Wait(), "error with command '%s'", ounceMinerCmd)
+	return errors.Wrapf(kaspaMinerCmd.Wait(), "error with command '%s'", kaspaMinerCmd)
 }

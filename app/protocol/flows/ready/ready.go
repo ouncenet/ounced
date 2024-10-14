@@ -1,13 +1,13 @@
 package ready
 
 import (
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/app/protocol/common"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/app/protocol/common"
 	"sync/atomic"
 
-	peerpkg "github.com/ouncenet/ounced/app/protocol/peer"
-	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
-	routerpkg "github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
+	peerpkg "github.com/kaspanet/kaspad/app/protocol/peer"
+	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
+	routerpkg "github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
 	"github.com/pkg/errors"
 )
 

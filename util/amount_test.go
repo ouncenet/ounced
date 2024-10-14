@@ -5,11 +5,11 @@
 package util_test
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
 	"math"
 	"testing"
 
-	. "github.com/ouncenet/ounced/util"
+	. "github.com/kaspanet/kaspad/util"
 )
 
 func TestAmountCreation(t *testing.T) {

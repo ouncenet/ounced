@@ -5,9 +5,9 @@ import (
 	"strings"
 	"sync/atomic"
 
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/router"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/router"
 
-	"github.com/ouncenet/ounced/app/protocol/protocolerrors"
+	"github.com/kaspanet/kaspad/app/protocol/protocolerrors"
 )
 
 var (

@@ -1,7 +1,7 @@
 package model
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
 // BlockValidator exposes a set of validation classes, after which

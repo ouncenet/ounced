@@ -8,7 +8,7 @@ import (
 	"net"
 	"testing"
 
-	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/kaspanet/kaspad/app/appmessage"
 )
 
 // TestIPTypes ensures the various functions which determine the type of an IP

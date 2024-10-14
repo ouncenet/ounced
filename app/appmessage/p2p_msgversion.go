@@ -8,11 +8,11 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/version"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/version"
 
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/id"
-	"github.com/ouncenet/ounced/util/mstime"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/id"
+	"github.com/kaspanet/kaspad/util/mstime"
 )
 
 // MaxUserAgentLen is the maximum allowed length for the user agent field in a
@@ -20,9 +20,9 @@ import (
 const MaxUserAgentLen = 256
 
 // DefaultUserAgent for appmessage in the stack
-var DefaultUserAgent = fmt.Sprintf("/ounced:%s/", version.Version())
+var DefaultUserAgent = fmt.Sprintf("/kaspad:%s/", version.Version())
 
-// MsgVersion implements the Message interface and represents a ounce version
+// MsgVersion implements the Message interface and represents a kaspa version
 // message. It is used for a peer to advertise itself as soon as an outbound
 // connection is made. The remote peer then uses this information along with
 // its own to negotiate. The remote peer must then respond with a version
@@ -53,7 +53,7 @@ type MsgVersion struct {
 	// on the appmessage. This has a max length of MaxUserAgentLen.
 	UserAgent string
 
-	// Don't announce transactions to peer.
+	// Don't annkaspa transactions to peer.
 	DisableRelayTx bool
 
 	// The subnetwork of the generator of the version message. Should be nil in full nodes
@@ -78,7 +78,7 @@ func (msg *MsgVersion) Command() MessageCommand {
 	return CmdVersion
 }
 
-// NewMsgVersion returns a new ounce version message that conforms to the
+// NewMsgVersion returns a new kaspa version message that conforms to the
 // Message interface using the passed parameters and defaults for the remaining
 // fields.
 func NewMsgVersion(addr *NetAddress, id *id.ID, network string,

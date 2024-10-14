@@ -1,9 +1,9 @@
 package grpcserver
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/server"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter/server/grpcserver/protowire"
-	"github.com/ouncenet/ounced/util/panics"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/server"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter/server/grpcserver/protowire"
+	"github.com/kaspanet/kaspad/util/panics"
 )
 
 type rpcServer struct {

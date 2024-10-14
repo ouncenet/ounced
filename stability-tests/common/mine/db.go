@@ -3,9 +3,9 @@ package mine
 import (
 	"path/filepath"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/infrastructure/db/database"
-	"github.com/ouncenet/ounced/infrastructure/db/database/ldb"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/infrastructure/db/database/ldb"
 )
 
 const leveldbCacheSizeMiB = 256

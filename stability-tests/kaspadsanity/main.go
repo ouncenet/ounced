@@ -4,15 +4,15 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/util/profiling"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/util/profiling"
 
-	"github.com/ouncenet/ounced/util/panics"
+	"github.com/kaspanet/kaspad/util/panics"
 	"github.com/pkg/errors"
 )
 
 func main() {
-	defer panics.HandlePanic(log, "ouncedsanity-main", nil)
+	defer panics.HandlePanic(log, "kaspadsanity-main", nil)
 	err := parseConfig()
 	if err != nil {
 		panic(errors.Wrap(err, "error in parseConfig"))

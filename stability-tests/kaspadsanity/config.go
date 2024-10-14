@@ -4,12 +4,12 @@ import (
 	"path/filepath"
 
 	"github.com/jessevdk/go-flags"
-	"github.com/ouncenet/ounced/stability-tests/common"
+	"github.com/kaspanet/kaspad/stability-tests/common"
 )
 
 const (
-	defaultLogFilename    = "ouncedsanity.log"
-	defaultErrLogFilename = "ouncedsanity_err.log"
+	defaultLogFilename    = "kaspadsanity.log"
+	defaultErrLogFilename = "kaspadsanity_err.log"
 )
 
 var (

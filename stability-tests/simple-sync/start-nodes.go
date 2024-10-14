@@ -7,8 +7,8 @@ import (
 	"sync/atomic"
 	"time"
 
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/util/panics"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/util/panics"
 	"github.com/pkg/errors"
 )
 
@@ -24,20 +24,20 @@ func startNodes() (teardown func(), err error) {
 	)
 
 	log.Infof("Starting nodes")
-	syncerDataDir, err := common.TempDir("ounced-datadir-syncer")
+	syncerDataDir, err := common.TempDir("kaspad-datadir-syncer")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCER datadir: %s", syncerDataDir)
 
-	syncedDataDir, err := common.TempDir("ounced-datadir-synced")
+	syncedDataDir, err := common.TempDir("kaspad-datadir-synced")
 	if err != nil {
 		panic(errors.Wrapf(err, "error in Tempdir"))
 	}
 	log.Infof("SYNCED datadir: %s", syncedDataDir)
 
 	syncerCmd, err := common.StartCmd("KASPAD-SYNCER",
-		"ounced",
+		"kaspad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncerDataDir,
 		"--logdir", syncerDataDir,
@@ -51,7 +51,7 @@ func startNodes() (teardown func(), err error) {
 	}
 
 	syncedCmd, err := common.StartCmd("KASPAD-SYNCED",
-		"ounced",
+		"kaspad",
 		common.NetworkCliArgumentFromNetParams(activeConfig().NetParams()),
 		"--appdir", syncedDataDir,
 		"--logdir", syncedDataDir,

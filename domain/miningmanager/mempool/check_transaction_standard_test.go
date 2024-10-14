@@ -9,17 +9,17 @@ import (
 	"math"
 	"testing"
 
-	"github.com/ouncenet/ounced/domain/consensusreference"
+	"github.com/kaspanet/kaspad/domain/consensusreference"
 
-	"github.com/ouncenet/ounced/domain/consensus/utils/testutils"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/testutils"
 
-	"github.com/ouncenet/ounced/domain/consensus"
+	"github.com/kaspanet/kaspad/domain/consensus"
 
-	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/constants"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/txscript"
+	"github.com/kaspanet/kaspad/util"
 	"github.com/pkg/errors"
 )
 

@@ -5,7 +5,7 @@ import (
 	"net"
 	"time"
 
-	"github.com/ouncenet/ounced/app/protocol/common"
+	"github.com/kaspanet/kaspad/app/protocol/common"
 	"github.com/pkg/errors"
 )
 

@@ -1,6 +1,6 @@
 package winservice
 
-import "github.com/ouncenet/ounced/infrastructure/config"
+import "github.com/kaspanet/kaspad/infrastructure/config"
 
 // ServiceDescription contains information about a service, needed to administer it
 type ServiceDescription struct {

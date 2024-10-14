@@ -1,6 +1,6 @@
 package model
 
-import "github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+import "github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
 // BlockStatusStore represents a store of BlockStatuses
 type BlockStatusStore interface {

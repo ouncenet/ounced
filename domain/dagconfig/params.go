@@ -8,14 +8,14 @@ import (
 	"math/big"
 	"time"
 
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
-	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/util/network"
+	"github.com/kaspanet/kaspad/app/appmessage"
+	"github.com/kaspanet/kaspad/util/network"
 
 	"github.com/pkg/errors"
 
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/util"
 )
 
 // These variables are the DAG proof-of-work limit parameters for each default
@@ -90,7 +90,7 @@ type Params struct {
 
 	// SubsidyGenesisReward SubsidyMergeSetRewardMultiplier, and
 	// SubsidyPastRewardMultiplier are part of the block subsidy equation.
-	// Further details: https://hashdag.medium.com/ounce-launch-plan-9a63f4d754a6
+	// Further details: https://hashdag.medium.com/kaspa-launch-plan-9a63f4d754a6
 	SubsidyGenesisReward            uint64
 	PreDeflationaryPhaseBaseSubsidy uint64
 	DeflationaryPhaseBaseSubsidy    uint64

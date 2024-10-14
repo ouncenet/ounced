@@ -5,10 +5,10 @@
 package appmessage
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 )
 
-// MsgRequestAnticone implements the Message interface and represents a ounce
+// MsgRequestAnticone implements the Message interface and represents a kaspa
 // RequestHeaders message. It is used to request the set past(ContextHash) \cap anticone(BlockHash)
 type MsgRequestAnticone struct {
 	baseMessage
@@ -22,7 +22,7 @@ func (msg *MsgRequestAnticone) Command() MessageCommand {
 	return CmdRequestAnticone
 }
 
-// NewMsgRequestAnticone returns a new ounce RequestPastDiff message that conforms to the
+// NewMsgRequestAnticone returns a new kaspa RequestPastDiff message that conforms to the
 // Message interface using the passed parameters and defaults for the remaining
 // fields.
 func NewMsgRequestAnticone(blockHash, contextHash *externalapi.DomainHash) *MsgRequestAnticone {

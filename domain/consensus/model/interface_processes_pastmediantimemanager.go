@@ -1,6 +1,6 @@
 package model
 
-import "github.com/ouncenet/ounced/domain/consensus/model/externalapi"
+import "github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
 
 // PastMedianTimeManager provides a method to resolve the
 // past median time of a block

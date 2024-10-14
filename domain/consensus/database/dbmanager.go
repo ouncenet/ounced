@@ -1,8 +1,8 @@
 package database
 
 import (
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/infrastructure/db/database"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/infrastructure/db/database"
 )
 
 type dbManager struct {

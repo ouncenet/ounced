@@ -2,11 +2,11 @@ package blockheaderstore
 
 import (
 	"github.com/golang/protobuf/proto"
-	"github.com/ouncenet/ounced/domain/consensus/database/serialization"
-	"github.com/ouncenet/ounced/domain/consensus/model"
-	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
-	"github.com/ouncenet/ounced/domain/consensus/utils/lrucache"
-	"github.com/ouncenet/ounced/util/staging"
+	"github.com/kaspanet/kaspad/domain/consensus/database/serialization"
+	"github.com/kaspanet/kaspad/domain/consensus/model"
+	"github.com/kaspanet/kaspad/domain/consensus/model/externalapi"
+	"github.com/kaspanet/kaspad/domain/consensus/utils/lrucache"
+	"github.com/kaspanet/kaspad/util/staging"
 )
 
 var bucketName = []byte("block-headers")

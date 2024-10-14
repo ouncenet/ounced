@@ -2,11 +2,11 @@ package util_test
 
 import (
 	"fmt"
-	"github.com/ouncenet/ounced/util/difficulty"
+	"github.com/kaspanet/kaspad/util/difficulty"
 	"math"
 	"math/big"
 
-	"github.com/ouncenet/ounced/util"
+	"github.com/kaspanet/kaspad/util"
 )
 
 func ExampleAmount() {
@@ -57,7 +57,7 @@ func ExampleNewAmount() {
 	// Output: 1 KAS
 	// 0.01234567 KAS
 	// 0 KAS
-	// invalid ounce amount
+	// invalid kaspa amount
 }
 
 func ExampleAmount_unitConversions() {

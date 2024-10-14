@@ -1,12 +1,12 @@
 package integration
 
 import (
-	"github.com/ouncenet/ounced/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/config"
 	"runtime"
 	"testing"
 	"time"
 
-	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
+	"github.com/kaspanet/kaspad/infrastructure/network/rpcclient"
 )
 
 const rpcTimeout = 10 * time.Second

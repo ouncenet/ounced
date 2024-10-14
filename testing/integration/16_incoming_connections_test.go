@@ -6,7 +6,7 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ouncenet/ounced/app/appmessage"
+	"github.com/kaspanet/kaspad/app/appmessage"
 )
 
 func Test16IncomingConnections(t *testing.T) {

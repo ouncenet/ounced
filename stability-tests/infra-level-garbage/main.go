@@ -5,8 +5,8 @@ import (
 	"os"
 	"time"
 
-	"github.com/ouncenet/ounced/stability-tests/common"
-	"github.com/ouncenet/ounced/util/profiling"
+	"github.com/kaspanet/kaspad/stability-tests/common"
+	"github.com/kaspanet/kaspad/util/profiling"
 )
 
 const timeout = 5 * time.Second

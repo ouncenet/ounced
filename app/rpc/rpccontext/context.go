@@ -1,13 +1,13 @@
 package rpccontext
 
 import (
-	"github.com/ouncenet/ounced/app/protocol"
-	"github.com/ouncenet/ounced/domain"
-	"github.com/ouncenet/ounced/domain/utxoindex"
-	"github.com/ouncenet/ounced/infrastructure/config"
-	"github.com/ouncenet/ounced/infrastructure/network/addressmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/connmanager"
-	"github.com/ouncenet/ounced/infrastructure/network/netadapter"
+	"github.com/kaspanet/kaspad/app/protocol"
+	"github.com/kaspanet/kaspad/domain"
+	"github.com/kaspanet/kaspad/domain/utxoindex"
+	"github.com/kaspanet/kaspad/infrastructure/config"
+	"github.com/kaspanet/kaspad/infrastructure/network/addressmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/connmanager"
+	"github.com/kaspanet/kaspad/infrastructure/network/netadapter"
 )
 
 // Context represents the RPC context
