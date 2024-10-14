@@ -84,7 +84,7 @@ func NewAmount(f float64) (Amount, error) {
 	case math.IsInf(f, 1):
 		fallthrough
 	case math.IsInf(f, -1):
-		return 0, errors.New("invalid ounce amount")
+		return 0, errors.New("invalid kaspa amount")
 	}
 
 	return round(f * constants.SompiPerKaspa), nil
