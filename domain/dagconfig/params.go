@@ -293,7 +293,7 @@ var MainnetParams = Params{
 // TestnetParams defines the network parameters for the test Ounce network.
 var TestnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "kaspa-testnet-10",
+	Name:        "ounce-testnet",
 	Net:         appmessage.Testnet,
 	RPCPort:     "16210",
 	DefaultPort: "16211",
@@ -365,7 +365,7 @@ var TestnetParams = Params{
 // just turn into another public testnet.
 var SimnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "kaspa-simnet",
+	Name:        "ounce-simnet",
 	Net:         appmessage.Simnet,
 	RPCPort:     "16510",
 	DefaultPort: "16511",
@@ -425,7 +425,7 @@ var SimnetParams = Params{
 // DevnetParams defines the network parameters for the development Ounce network.
 var DevnetParams = Params{
 	K:           defaultGHOSTDAGK,
-	Name:        "kaspa-devnet",
+	Name:        "ounce-devnet",
 	Net:         appmessage.Devnet,
 	RPCPort:     "16610",
 	DefaultPort: "16611",
