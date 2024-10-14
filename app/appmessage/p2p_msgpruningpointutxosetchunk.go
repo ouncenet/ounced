@@ -2,7 +2,7 @@ package appmessage
 
 import "github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 
-// MsgPruningPointUTXOSetChunk represents a kaspa PruningPointUTXOSetChunk message
+// MsgPruningPointUTXOSetChunk represents a ounce PruningPointUTXOSetChunk message
 type MsgPruningPointUTXOSetChunk struct {
 	baseMessage
 	OutpointAndUTXOEntryPairs []*OutpointAndUTXOEntryPair

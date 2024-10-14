@@ -4,7 +4,7 @@ import (
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 )
 
-// MsgIBDBlockLocatorHighestHash represents a kaspa BlockLocatorHighestHash message
+// MsgIBDBlockLocatorHighestHash represents a ounce BlockLocatorHighestHash message
 type MsgIBDBlockLocatorHighestHash struct {
 	baseMessage
 	HighestHash *externalapi.DomainHash
