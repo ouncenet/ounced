@@ -6,8 +6,8 @@ import (
 	"io/ioutil"
 	"strings"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/client"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/client"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
 	"github.com/pkg/errors"
 )
 

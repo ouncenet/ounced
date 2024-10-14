@@ -2,7 +2,7 @@ package server
 
 import (
 	"context"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
 	"github.com/ouncenet/ounced/version"
 )
 

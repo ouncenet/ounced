@@ -12,7 +12,7 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 
 	"github.com/ouncenet/ounced/domain/dagconfig"
 	"github.com/ouncenet/ounced/util"
@@ -22,7 +22,7 @@ import (
 )
 
 var (
-	defaultAppDir = util.AppDir("kaspawallet", false)
+	defaultAppDir = util.AppDir("ouncewallet", false)
 )
 
 // LastVersion is the most up to date file format version

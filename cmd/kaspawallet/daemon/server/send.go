@@ -3,7 +3,7 @@ package server
 import (
 	"context"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
 )
 
 func (s *server) Send(_ context.Context, request *pb.SendRequest) (*pb.SendResponse, error) {

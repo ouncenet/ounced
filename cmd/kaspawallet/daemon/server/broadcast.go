@@ -5,9 +5,9 @@ import (
 	"time"
 
 	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/serialization"
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
 	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
@@ -40,7 +40,7 @@ func (s *server) broadcast(transactions [][]byte, isDomain bool) ([]string, erro
 				return nil, err
 			}
 		} else if !isDomain { //default in proto3 is false
-			tx, err = libkaspawallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
+			tx, err = libouncewallet.ExtractTransaction(transaction, s.keysFile.ECDSA)
 			if err != nil {
 				return nil, err
 			}

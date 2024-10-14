@@ -5,12 +5,12 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/bip32"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/bip32"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 	"github.com/pkg/errors"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/keys"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/keys"
 )
 
 func create(conf *createConfig) error {
@@ -32,8 +32,8 @@ func create(conf *createConfig) error {
 	}
 
 	fmt.Printf("Notice the above is neither a secret key to your wallet " +
-		"(use \"kaspawallet dump-unencrypted-data\" to see a secret seed phrase) " +
-		"nor a wallet public address (use \"kaspawallet new-address\" to create and see one)\n\n")
+		"(use \"ouncewallet dump-unencrypted-data\" to see a secret seed phrase) " +
+		"nor a wallet public address (use \"ouncewallet new-address\" to create and see one)\n\n")
 
 	extendedPublicKeys := make([]string, conf.NumPrivateKeys, conf.NumPublicKeys)
 	copy(extendedPublicKeys, signerExtendedPublicKeys)
@@ -58,7 +58,7 @@ func create(conf *createConfig) error {
 	// For a read only wallet the cosigner index is 0
 	cosignerIndex := uint32(0)
 	if len(signerExtendedPublicKeys) > 0 {
-		cosignerIndex, err = libkaspawallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
+		cosignerIndex, err = libouncewallet.MinimumCosignerIndex(signerExtendedPublicKeys, extendedPublicKeys)
 		if err != nil {
 			return err
 		}

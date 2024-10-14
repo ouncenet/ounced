@@ -3,8 +3,8 @@ package main
 import (
 	"context"
 	"fmt"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/client"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/client"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
 )
 
 func getDaemonVersion(conf *getDaemonVersionConfig) error {

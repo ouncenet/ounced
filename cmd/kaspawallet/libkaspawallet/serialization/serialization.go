@@ -3,7 +3,7 @@ package serialization
 import (
 	"math"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization/protoserialization"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/serialization/protoserialization"
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 	"github.com/ouncenet/ounced/domain/consensus/utils/subnetworks"
 	"github.com/pkg/errors"

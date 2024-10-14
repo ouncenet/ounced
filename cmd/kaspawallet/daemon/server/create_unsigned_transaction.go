@@ -4,8 +4,8 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
 	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
 	"github.com/ouncenet/ounced/util"
 	"github.com/pkg/errors"
@@ -68,17 +68,17 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		return nil, err
 	}
 
-	payments := []*libkaspawallet.Payment{{
+	payments := []*libouncewallet.Payment{{
 		Address: toAddress,
 		Amount:  spendValue,
 	}}
 	if changeSompi > 0 {
-		payments = append(payments, &libkaspawallet.Payment{
+		payments = append(payments, &libouncewallet.Payment{
 			Address: changeAddress,
 			Amount:  changeSompi,
 		})
 	}
-	unsignedTransaction, err := libkaspawallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
+	unsignedTransaction, err := libouncewallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
 		s.keysFile.MinimumSignatures,
 		payments, selectedUTXOs)
 	if err != nil {
@@ -93,9 +93,9 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 }
 
 func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uint64, fromAddresses []*walletAddress) (
-	selectedUTXOs []*libkaspawallet.UTXO, totalReceived uint64, changeSompi uint64, err error) {
+	selectedUTXOs []*libouncewallet.UTXO, totalReceived uint64, changeSompi uint64, err error) {
 
-	selectedUTXOs = []*libkaspawallet.UTXO{}
+	selectedUTXOs = []*libouncewallet.UTXO{}
 	totalValue := uint64(0)
 
 	dagInfo, err := s.rpcClient.GetBlockDAGInfo()
@@ -117,7 +117,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 			}
 		}
 
-		selectedUTXOs = append(selectedUTXOs, &libkaspawallet.UTXO{
+		selectedUTXOs = append(selectedUTXOs, &libouncewallet.UTXO{
 			Outpoint:       utxo.Outpoint,
 			UTXOEntry:      utxo.UTXOEntry,
 			DerivationPath: s.walletAddressPath(utxo.address),

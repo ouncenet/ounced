@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/keys"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/keys"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 
 	"github.com/pkg/errors"
 )
@@ -36,7 +36,7 @@ func dumpUnencryptedData(conf *dumpUnencryptedDataConfig) error {
 	mnemonicPublicKeys := make(map[string]struct{})
 	for i, mnemonic := range mnemonics {
 		fmt.Printf("Mnemonic #%d:\n%s\n\n", i+1, mnemonic)
-		publicKey, err := libkaspawallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
+		publicKey, err := libouncewallet.MasterPublicKeyFromMnemonic(conf.NetParams(), mnemonic, len(keysFile.ExtendedPublicKeys) > 1)
 		if err != nil {
 			return err
 		}

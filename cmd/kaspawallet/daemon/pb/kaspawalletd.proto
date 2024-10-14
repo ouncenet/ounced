@@ -1,9 +1,9 @@
 syntax = "proto3";
 
-option go_package = "github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb";
-package kaspawalletd;
+option go_package = "github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb";
+package ouncewalletd;
 
-service kaspawalletd {
+service ouncewalletd {
   rpc GetBalance (GetBalanceRequest) returns (GetBalanceResponse) {}
   rpc GetExternalSpendableUTXOs (GetExternalSpendableUTXOsRequest) returns (GetExternalSpendableUTXOsResponse) {}
   rpc CreateUnsignedTransactions (CreateUnsignedTransactionsRequest) returns (CreateUnsignedTransactionsResponse) {}

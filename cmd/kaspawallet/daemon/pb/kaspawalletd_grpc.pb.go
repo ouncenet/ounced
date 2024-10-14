@@ -2,7 +2,7 @@
 // versions:
 // - protoc-gen-go-grpc v1.2.0
 // - protoc             v3.12.3
-// source: kaspawalletd.proto
+// source: ouncewalletd.proto
 
 package pb
 
@@ -36,98 +36,98 @@ type KaspawalletdClient interface {
 	GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error)
 }
 
-type kaspawalletdClient struct {
+type ouncewalletdClient struct {
 	cc grpc.ClientConnInterface
 }
 
 func NewKaspawalletdClient(cc grpc.ClientConnInterface) KaspawalletdClient {
-	return &kaspawalletdClient{cc}
+	return &ouncewalletdClient{cc}
 }
 
-func (c *kaspawalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
+func (c *ouncewalletdClient) GetBalance(ctx context.Context, in *GetBalanceRequest, opts ...grpc.CallOption) (*GetBalanceResponse, error) {
 	out := new(GetBalanceResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/GetBalance", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/GetBalance", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
+func (c *ouncewalletdClient) GetExternalSpendableUTXOs(ctx context.Context, in *GetExternalSpendableUTXOsRequest, opts ...grpc.CallOption) (*GetExternalSpendableUTXOsResponse, error) {
 	out := new(GetExternalSpendableUTXOsResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/GetExternalSpendableUTXOs", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/GetExternalSpendableUTXOs", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
+func (c *ouncewalletdClient) CreateUnsignedTransactions(ctx context.Context, in *CreateUnsignedTransactionsRequest, opts ...grpc.CallOption) (*CreateUnsignedTransactionsResponse, error) {
 	out := new(CreateUnsignedTransactionsResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/CreateUnsignedTransactions", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/CreateUnsignedTransactions", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
+func (c *ouncewalletdClient) ShowAddresses(ctx context.Context, in *ShowAddressesRequest, opts ...grpc.CallOption) (*ShowAddressesResponse, error) {
 	out := new(ShowAddressesResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/ShowAddresses", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/ShowAddresses", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
+func (c *ouncewalletdClient) NewAddress(ctx context.Context, in *NewAddressRequest, opts ...grpc.CallOption) (*NewAddressResponse, error) {
 	out := new(NewAddressResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/NewAddress", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/NewAddress", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
+func (c *ouncewalletdClient) Shutdown(ctx context.Context, in *ShutdownRequest, opts ...grpc.CallOption) (*ShutdownResponse, error) {
 	out := new(ShutdownResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/Shutdown", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/Shutdown", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
+func (c *ouncewalletdClient) Broadcast(ctx context.Context, in *BroadcastRequest, opts ...grpc.CallOption) (*BroadcastResponse, error) {
 	out := new(BroadcastResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/Broadcast", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/Broadcast", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
+func (c *ouncewalletdClient) Send(ctx context.Context, in *SendRequest, opts ...grpc.CallOption) (*SendResponse, error) {
 	out := new(SendResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/Send", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/Send", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
+func (c *ouncewalletdClient) Sign(ctx context.Context, in *SignRequest, opts ...grpc.CallOption) (*SignResponse, error) {
 	out := new(SignResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/Sign", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/Sign", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
 	return out, nil
 }
 
-func (c *kaspawalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
+func (c *ouncewalletdClient) GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error) {
 	out := new(GetVersionResponse)
-	err := c.cc.Invoke(ctx, "/kaspawalletd.kaspawalletd/GetVersion", in, out, opts...)
+	err := c.cc.Invoke(ctx, "/ouncewalletd.ouncewalletd/GetVersion", in, out, opts...)
 	if err != nil {
 		return nil, err
 	}
@@ -210,7 +210,7 @@ func _Kaspawalletd_GetBalance_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/GetBalance",
+		FullMethod: "/ouncewalletd.ouncewalletd/GetBalance",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).GetBalance(ctx, req.(*GetBalanceRequest))
@@ -228,7 +228,7 @@ func _Kaspawalletd_GetExternalSpendableUTXOs_Handler(srv interface{}, ctx contex
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/GetExternalSpendableUTXOs",
+		FullMethod: "/ouncewalletd.ouncewalletd/GetExternalSpendableUTXOs",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).GetExternalSpendableUTXOs(ctx, req.(*GetExternalSpendableUTXOsRequest))
@@ -246,7 +246,7 @@ func _Kaspawalletd_CreateUnsignedTransactions_Handler(srv interface{}, ctx conte
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/CreateUnsignedTransactions",
+		FullMethod: "/ouncewalletd.ouncewalletd/CreateUnsignedTransactions",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).CreateUnsignedTransactions(ctx, req.(*CreateUnsignedTransactionsRequest))
@@ -264,7 +264,7 @@ func _Kaspawalletd_ShowAddresses_Handler(srv interface{}, ctx context.Context, d
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/ShowAddresses",
+		FullMethod: "/ouncewalletd.ouncewalletd/ShowAddresses",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).ShowAddresses(ctx, req.(*ShowAddressesRequest))
@@ -282,7 +282,7 @@ func _Kaspawalletd_NewAddress_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/NewAddress",
+		FullMethod: "/ouncewalletd.ouncewalletd/NewAddress",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).NewAddress(ctx, req.(*NewAddressRequest))
@@ -300,7 +300,7 @@ func _Kaspawalletd_Shutdown_Handler(srv interface{}, ctx context.Context, dec fu
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/Shutdown",
+		FullMethod: "/ouncewalletd.ouncewalletd/Shutdown",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).Shutdown(ctx, req.(*ShutdownRequest))
@@ -318,7 +318,7 @@ func _Kaspawalletd_Broadcast_Handler(srv interface{}, ctx context.Context, dec f
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/Broadcast",
+		FullMethod: "/ouncewalletd.ouncewalletd/Broadcast",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).Broadcast(ctx, req.(*BroadcastRequest))
@@ -336,7 +336,7 @@ func _Kaspawalletd_Send_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/Send",
+		FullMethod: "/ouncewalletd.ouncewalletd/Send",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).Send(ctx, req.(*SendRequest))
@@ -354,7 +354,7 @@ func _Kaspawalletd_Sign_Handler(srv interface{}, ctx context.Context, dec func(i
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/Sign",
+		FullMethod: "/ouncewalletd.ouncewalletd/Sign",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).Sign(ctx, req.(*SignRequest))
@@ -372,7 +372,7 @@ func _Kaspawalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec 
 	}
 	info := &grpc.UnaryServerInfo{
 		Server:     srv,
-		FullMethod: "/kaspawalletd.kaspawalletd/GetVersion",
+		FullMethod: "/ouncewalletd.ouncewalletd/GetVersion",
 	}
 	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
 		return srv.(KaspawalletdServer).GetVersion(ctx, req.(*GetVersionRequest))
@@ -384,7 +384,7 @@ func _Kaspawalletd_GetVersion_Handler(srv interface{}, ctx context.Context, dec 
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var Kaspawalletd_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "kaspawalletd.kaspawalletd",
+	ServiceName: "ouncewalletd.ouncewalletd",
 	HandlerType: (*KaspawalletdServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
@@ -429,5 +429,5 @@ var Kaspawalletd_ServiceDesc = grpc.ServiceDesc{
 		},
 	},
 	Streams:  []grpc.StreamDesc{},
-	Metadata: "kaspawalletd.proto",
+	Metadata: "ouncewalletd.proto",
 }

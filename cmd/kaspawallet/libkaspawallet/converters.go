@@ -1,19 +1,19 @@
-package libkaspawallet
+package libouncewallet
 
 import (
 	"encoding/hex"
 
 	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 	"github.com/ouncenet/ounced/domain/consensus/utils/transactionid"
 	"github.com/ouncenet/ounced/domain/consensus/utils/utxo"
 )
 
-// KaspawalletdUTXOsTolibkaspawalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libkaspawallet.UTXO
-func KaspawalletdUTXOsTolibkaspawalletUTXOs(kaspawalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
-	UTXOs := make([]*UTXO, len(kaspawalletdUtxoEntires))
-	for i, entry := range kaspawalletdUtxoEntires {
+// KaspawalletdUTXOsTolibouncewalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libouncewallet.UTXO
+func KaspawalletdUTXOsTolibouncewalletUTXOs(ouncewalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+	UTXOs := make([]*UTXO, len(ouncewalletdUtxoEntires))
+	for i, entry := range ouncewalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
 		if err != nil {
 			return nil, err

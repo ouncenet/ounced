@@ -1,7 +1,7 @@
 package miningmanager_test
 
 import (
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
 	"github.com/ouncenet/ounced/domain/consensusreference"
 	"github.com/ouncenet/ounced/domain/miningmanager/model"
 	"github.com/ouncenet/ounced/util"
@@ -885,7 +885,7 @@ func generateNewCoinbase(addressPrefix util.Bech32Prefix, op opType) (*externala
 			ExtraData:       nil,
 		}, nil
 	}
-	_, publicKey, err := libkaspawallet.CreateKeyPair(op == opECDSA)
+	_, publicKey, err := libouncewallet.CreateKeyPair(op == opECDSA)
 	if err != nil {
 		return nil, err
 	}

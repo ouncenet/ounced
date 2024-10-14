@@ -1,4 +1,4 @@
-package libkaspawallet
+package libouncewallet
 
 import (
 	"math"
@@ -6,7 +6,7 @@ import (
 	"strings"
 
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/bip32"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/bip32"
 	"github.com/ouncenet/ounced/domain/dagconfig"
 	"github.com/ouncenet/ounced/util"
 	"github.com/pkg/errors"

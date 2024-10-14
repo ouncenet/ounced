@@ -4,8 +4,8 @@ import (
 	"context"
 
 	"github.com/ouncenet/ounced/app/appmessage"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
 	"github.com/ouncenet/ounced/util"
 )
 
@@ -46,7 +46,7 @@ func (s *server) selectExternalSpendableUTXOs(externalUTXOs *appmessage.GetUTXOs
 		if !isExternalUTXOSpendable(entry, daaScore, maturity) {
 			continue
 		}
-		selectedExternalUtxos = append(selectedExternalUtxos, libkaspawallet.AppMessageUTXOToKaspawalletdUTXO(entry))
+		selectedExternalUtxos = append(selectedExternalUtxos, libouncewallet.AppMessageUTXOToKaspawalletdUTXO(entry))
 	}
 
 	return selectedExternalUtxos, nil

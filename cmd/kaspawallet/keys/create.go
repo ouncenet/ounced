@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 	"github.com/ouncenet/ounced/domain/dagconfig"
 	"github.com/pkg/errors"
 	"github.com/tyler-smith/go-bip39"
@@ -19,7 +19,7 @@ func CreateMnemonics(params *dagconfig.Params, numKeys uint32, cmdLinePassword s
 	mnemonics := make([]string, numKeys)
 	for i := uint32(0); i < numKeys; i++ {
 		var err error
-		mnemonics[i], err = libkaspawallet.CreateMnemonic()
+		mnemonics[i], err = libouncewallet.CreateMnemonic()
 		if err != nil {
 			return nil, nil, err
 		}
@@ -65,7 +65,7 @@ func encryptedMnemonicExtendedPublicKeyPairs(params *dagconfig.Params, mnemonics
 	extendedPublicKeys = make([]string, 0, len(mnemonics))
 
 	for _, mnemonic := range mnemonics {
-		extendedPublicKey, err := libkaspawallet.MasterPublicKeyFromMnemonic(params, mnemonic, isMultisig)
+		extendedPublicKey, err := libouncewallet.MasterPublicKeyFromMnemonic(params, mnemonic, isMultisig)
 		if err != nil {
 			return nil, nil, err
 		}

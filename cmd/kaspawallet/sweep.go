@@ -6,11 +6,11 @@ import (
 	"fmt"
 
 	"github.com/kaspanet/go-secp256k1"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/client"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/client"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/serialization"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
 	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
@@ -33,7 +33,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	publicKeybytes, err := libkaspawallet.PublicKeyFromPrivateKey(privateKeyBytes)
+	publicKeybytes, err := libouncewallet.PublicKeyFromPrivateKey(privateKeyBytes)
 	if err != nil {
 		return err
 	}
@@ -64,7 +64,7 @@ func sweep(conf *sweepConfig) error {
 		return err
 	}
 
-	UTXOs, err := libkaspawallet.KaspawalletdUTXOsTolibkaspawalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
+	UTXOs, err := libouncewallet.KaspawalletdUTXOsTolibouncewalletUTXOs(getExternalSpendableUTXOsResponse.Entries)
 	if err != nil {
 		return err
 	}
@@ -140,7 +140,7 @@ func newDummyTransaction() *externalapi.DomainTransaction {
 
 func createSplitTransactionsWithSchnorrPrivteKey(
 	params *dagconfig.Params,
-	selectedUTXOs []*libkaspawallet.UTXO,
+	selectedUTXOs []*libouncewallet.UTXO,
 	toAddress util.Address,
 	feePerInput int) ([]*externalapi.DomainTransaction, error) {
 

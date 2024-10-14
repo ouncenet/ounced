@@ -4,9 +4,9 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/client"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/client"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 )
 
 func balance(conf *balanceConfig) error {

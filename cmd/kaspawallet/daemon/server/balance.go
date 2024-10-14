@@ -4,8 +4,8 @@ import (
 	"context"
 	"github.com/pkg/errors"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
 )
 
 type balancesType struct{ available, pending uint64 }
@@ -44,7 +44,7 @@ func (s *server) GetBalance(_ context.Context, _ *pb.GetBalanceRequest) (*pb.Get
 	i := 0
 	var available, pending uint64
 	for walletAddress, balances := range balancesMap {
-		address, err := libkaspawallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, s.walletAddressPath(walletAddress), s.keysFile.ECDSA)
+		address, err := libouncewallet.Address(s.params, s.keysFile.ExtendedPublicKeys, s.keysFile.MinimumSignatures, s.walletAddressPath(walletAddress), s.keysFile.ECDSA)
 		if err != nil {
 			return nil, err
 		}

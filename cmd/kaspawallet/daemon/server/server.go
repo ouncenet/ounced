@@ -16,8 +16,8 @@ import (
 
 	"github.com/ouncenet/ounced/util/profiling"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/keys"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/keys"
 	"github.com/ouncenet/ounced/domain/dagconfig"
 	"github.com/ouncenet/ounced/infrastructure/network/rpcclient"
 	"github.com/ouncenet/ounced/infrastructure/os/signal"
@@ -56,7 +56,7 @@ type server struct {
 // Currently, set to 100MB
 const MaxDaemonSendMsgSize = 100_000_000
 
-// Start starts the kaspawalletd server
+// Start starts the ouncewalletd server
 func Start(params *dagconfig.Params, listen, rpcServer string, keysFilePath string, profile string, timeout uint32) error {
 	initLog(defaultLogFile, defaultErrLogFile)
 

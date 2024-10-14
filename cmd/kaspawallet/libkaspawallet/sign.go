@@ -1,8 +1,8 @@
-package libkaspawallet
+package libouncewallet
 
 import (
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/bip32"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/bip32"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/serialization"
 	"github.com/ouncenet/ounced/domain/consensus/model/externalapi"
 	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
 	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"

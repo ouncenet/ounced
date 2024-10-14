@@ -6,11 +6,11 @@ import (
 	"os"
 	"strings"
 
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/client"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/daemon/pb"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/keys"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/utils"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/client"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/daemon/pb"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/keys"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/utils"
 	"github.com/pkg/errors"
 )
 
@@ -68,7 +68,7 @@ func send(conf *sendConfig) error {
 
 	signedTransactions := make([][]byte, len(createUnsignedTransactionsResponse.UnsignedTransactions))
 	for i, unsignedTransaction := range createUnsignedTransactionsResponse.UnsignedTransactions {
-		signedTransaction, err := libkaspawallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
+		signedTransaction, err := libouncewallet.Sign(conf.NetParams(), mnemonics, unsignedTransaction, keysFile.ECDSA)
 		if err != nil {
 			return err
 		}

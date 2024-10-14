@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/hex"
 	"fmt"
-	"github.com/ouncenet/ounced/cmd/kaspawallet/libkaspawallet/serialization"
+	"github.com/ouncenet/ounced/cmd/ouncewallet/libouncewallet/serialization"
 	"github.com/ouncenet/ounced/domain/consensus/utils/consensushashing"
 	"github.com/ouncenet/ounced/domain/consensus/utils/constants"
 	"github.com/ouncenet/ounced/domain/consensus/utils/txscript"
