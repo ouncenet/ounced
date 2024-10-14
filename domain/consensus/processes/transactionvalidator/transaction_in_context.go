@@ -73,17 +73,17 @@ func (v *transactionValidator) ValidateTransactionInContextAndPopulateFee(stagin
 		return err
 	}
 
-	totalSompiIn, err := v.checkTransactionInputAmounts(tx)
+	totalGrainIn, err := v.checkTransactionInputAmounts(tx)
 	if err != nil {
 		return err
 	}
 
-	totalSompiOut, err := v.checkTransactionOutputAmounts(tx, totalSompiIn)
+	totalGrainOut, err := v.checkTransactionOutputAmounts(tx, totalGrainIn)
 	if err != nil {
 		return err
 	}
 
-	tx.Fee = totalSompiIn - totalSompiOut
+	tx.Fee = totalGrainIn - totalGrainOut
 
 	err = v.checkTransactionSequenceLock(stagingArea, povBlockHash, tx)
 	if err != nil {
@@ -135,8 +135,8 @@ func (v *transactionValidator) checkTransactionCoinbaseMaturity(stagingArea *mod
 	return nil
 }
 
-func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.DomainTransaction) (totalSompiIn uint64, err error) {
-	totalSompiIn = 0
+func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.DomainTransaction) (totalGrainIn uint64, err error) {
+	totalGrainIn = 0
 
 	var missingOutpoints []*externalapi.DomainOutpoint
 	for _, input := range tx.Inputs {
@@ -149,10 +149,10 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		// Ensure the transaction amounts are in range. Each of the
 		// output values of the input transactions must not be negative
 		// or more than the max allowed per transaction. All amounts in
-		// a transaction are in a unit value known as a sompi. One
-		// ounce is a quantity of sompi as defined by the
-		// SompiPerOunce constant.
-		totalSompiIn, err = v.checkEntryAmounts(utxoEntry, totalSompiIn)
+		// a transaction are in a unit value known as a grain. One
+		// ounce is a quantity of grain as defined by the
+		// GrainPerOunce constant.
+		totalGrainIn, err = v.checkEntryAmounts(utxoEntry, totalGrainIn)
 		if err != nil {
 			return 0, err
 		}
@@ -162,42 +162,42 @@ func (v *transactionValidator) checkTransactionInputAmounts(tx *externalapi.Doma
 		return 0, ruleerrors.NewErrMissingTxOut(missingOutpoints)
 	}
 
-	return totalSompiIn, nil
+	return totalGrainIn, nil
 }
 
-func (v *transactionValidator) checkEntryAmounts(entry externalapi.UTXOEntry, totalSompiInBefore uint64) (totalSompiInAfter uint64, err error) {
+func (v *transactionValidator) checkEntryAmounts(entry externalapi.UTXOEntry, totalGrainInBefore uint64) (totalGrainInAfter uint64, err error) {
 	// The total of all outputs must not be more than the max
 	// allowed per transaction. Also, we could potentially overflow
 	// the accumulator so check for overflow.
 
-	originTxSompi := entry.Amount()
-	totalSompiInAfter = totalSompiInBefore + originTxSompi
-	if totalSompiInAfter < totalSompiInBefore ||
-		totalSompiInAfter > constants.MaxSompi {
+	originTxGrain := entry.Amount()
+	totalGrainInAfter = totalGrainInBefore + originTxGrain
+	if totalGrainInAfter < totalGrainInBefore ||
+		totalGrainInAfter > constants.MaxGrain {
 		return 0, errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 			"inputs is %d which is higher than max "+
-			"allowed value of %d", totalSompiInBefore,
-			constants.MaxSompi)
+			"allowed value of %d", totalGrainInBefore,
+			constants.MaxGrain)
 	}
-	return totalSompiInAfter, nil
+	return totalGrainInAfter, nil
 }
 
-func (v *transactionValidator) checkTransactionOutputAmounts(tx *externalapi.DomainTransaction, totalSompiIn uint64) (uint64, error) {
-	totalSompiOut := uint64(0)
+func (v *transactionValidator) checkTransactionOutputAmounts(tx *externalapi.DomainTransaction, totalGrainIn uint64) (uint64, error) {
+	totalGrainOut := uint64(0)
 	// Calculate the total output amount for this transaction. It is safe
 	// to ignore overflow and out of range errors here because those error
 	// conditions would have already been caught by checkTransactionAmountRanges.
 	for _, output := range tx.Outputs {
-		totalSompiOut += output.Value
+		totalGrainOut += output.Value
 	}
 
 	// Ensure the transaction does not spend more than its inputs.
-	if totalSompiIn < totalSompiOut {
+	if totalGrainIn < totalGrainOut {
 		return 0, errors.Wrapf(ruleerrors.ErrSpendTooHigh, "total value of all transaction inputs for "+
 			"the transaction is %d which is less than the amount "+
-			"spent of %d", totalSompiIn, totalSompiOut)
+			"spent of %d", totalGrainIn, totalGrainOut)
 	}
-	return totalSompiOut, nil
+	return totalGrainOut, nil
 }
 
 func (v *transactionValidator) checkTransactionSequenceLock(stagingArea *model.StagingArea,

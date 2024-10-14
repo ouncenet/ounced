@@ -11,17 +11,17 @@ import (
 	"github.com/pkg/errors"
 )
 
-// FormatKas takes the amount of sompis as uint64, and returns amount of OZ with 8  decimal places
+// FormatKas takes the amount of grains as uint64, and returns amount of OZ with 8  decimal places
 func FormatKas(amount uint64) string {
 	res := "                   "
 	if amount > 0 {
-		res = fmt.Sprintf("%19.8f", float64(amount)/constants.SompiPerOunce)
+		res = fmt.Sprintf("%19.8f", float64(amount)/constants.GrainPerOunce)
 	}
 	return res
 }
 
-// KasToSompi takes in a string representation of the Kas value to convert to Sompi
-func KasToSompi(amount string) (uint64, error) {
+// KasToGrain takes in a string representation of the Kas value to convert to Grain
+func KasToGrain(amount string) (uint64, error) {
 	err := validateOZAmountFormat(amount)
 
 	if err != nil {
@@ -33,11 +33,11 @@ func KasToSompi(amount string) (uint64, error) {
 	parts := strings.Split(amount, ".")
 	amountStr := ""
 
-	if constants.SompiPerOunce%10 != 0 {
-		return 0, errors.Errorf("Unable to convert to sompi when SompiPerOunce is not a multiple of 10")
+	if constants.GrainPerOunce%10 != 0 {
+		return 0, errors.Errorf("Unable to convert to grain when GrainPerOunce is not a multiple of 10")
 	}
 
-	decimalPlaces := int(math.Log10(constants.SompiPerOunce))
+	decimalPlaces := int(math.Log10(constants.GrainPerOunce))
 	decimalStr := ""
 
 	if len(parts) == 2 {

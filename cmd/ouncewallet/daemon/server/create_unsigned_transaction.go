@@ -17,7 +17,7 @@ const feePerInput = 10000
 // The minimal change amount to target in order to avoid large storage mass (see KIP9 for more details).
 // By having at least 0.2OZ in the change output we make sure that every transaction with send value >= 0.2OZ
 // should succeed (at most 50K storage mass for each output, thus overall lower than standard mass upper bound which is 100K gram)
-const minChangeTarget = constants.SompiPerOunce / 5
+const minChangeTarget = constants.GrainPerOunce / 5
 
 func (s *server) CreateUnsignedTransactions(_ context.Context, request *pb.CreateUnsignedTransactionsRequest) (
 	*pb.CreateUnsignedTransactionsResponse, error,
@@ -54,7 +54,7 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		fromAddresses = append(fromAddresses, fromAddress)
 	}
 
-	selectedUTXOs, spendValue, changeSompi, err := s.selectUTXOs(amount, isSendAll, feePerInput, fromAddresses)
+	selectedUTXOs, spendValue, changeGrain, err := s.selectUTXOs(amount, isSendAll, feePerInput, fromAddresses)
 	if err != nil {
 		return nil, err
 	}
@@ -72,10 +72,10 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 		Address: toAddress,
 		Amount:  spendValue,
 	}}
-	if changeSompi > 0 {
+	if changeGrain > 0 {
 		payments = append(payments, &libouncewallet.Payment{
 			Address: changeAddress,
-			Amount:  changeSompi,
+			Amount:  changeGrain,
 		})
 	}
 	unsignedTransaction, err := libouncewallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
@@ -93,7 +93,7 @@ func (s *server) createUnsignedTransactions(address string, amount uint64, isSen
 }
 
 func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uint64, fromAddresses []*walletAddress) (
-	selectedUTXOs []*libouncewallet.UTXO, totalReceived uint64, changeSompi uint64, err error) {
+	selectedUTXOs []*libouncewallet.UTXO, totalReceived uint64, changeGrain uint64, err error) {
 
 	selectedUTXOs = []*libouncewallet.UTXO{}
 	totalValue := uint64(0)
@@ -148,7 +148,7 @@ func (s *server) selectUTXOs(spendAmount uint64, isSendAll bool, feePerInput uin
 	}
 	if totalValue < totalSpend {
 		return nil, 0, 0, errors.Errorf("Insufficient funds for send: %f required, while only %f available",
-			float64(totalSpend)/constants.SompiPerOunce, float64(totalValue)/constants.SompiPerOunce)
+			float64(totalSpend)/constants.GrainPerOunce, float64(totalValue)/constants.GrainPerOunce)
 	}
 
 	return selectedUTXOs, totalReceived, totalValue - totalSpend, nil

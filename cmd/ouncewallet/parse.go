@@ -43,22 +43,22 @@ func parse(conf *parseConfig) error {
 		fmt.Printf("Transaction #%d ID: \t%s\n", i+1, consensushashing.TransactionID(partiallySignedTransaction.Tx))
 		fmt.Println()
 
-		allInputSompi := uint64(0)
+		allInputGrain := uint64(0)
 		for index, input := range partiallySignedTransaction.Tx.Inputs {
 			partiallySignedInput := partiallySignedTransaction.PartiallySignedInputs[index]
 
 			if conf.Verbose {
 				fmt.Printf("Input %d: \tOutpoint: %s:%d \tAmount: %.2f Ounce\n", index, input.PreviousOutpoint.TransactionID,
-					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.SompiPerOunce))
+					input.PreviousOutpoint.Index, float64(partiallySignedInput.PrevOutput.Value)/float64(constants.GrainPerOunce))
 			}
 
-			allInputSompi += partiallySignedInput.PrevOutput.Value
+			allInputGrain += partiallySignedInput.PrevOutput.Value
 		}
 		if conf.Verbose {
 			fmt.Println()
 		}
 
-		allOutputSompi := uint64(0)
+		allOutputGrain := uint64(0)
 		for index, output := range partiallySignedTransaction.Tx.Outputs {
 			scriptPublicKeyType, scriptPublicKeyAddress, err := txscript.ExtractScriptPubKeyAddress(output.ScriptPublicKey, conf.ActiveNetParams)
 			if err != nil {
@@ -72,13 +72,13 @@ func parse(conf *parseConfig) error {
 			}
 
 			fmt.Printf("Output %d: \tRecipient: %s \tAmount: %.2f Ounce\n",
-				index, addressString, float64(output.Value)/float64(constants.SompiPerOunce))
+				index, addressString, float64(output.Value)/float64(constants.GrainPerOunce))
 
-			allOutputSompi += output.Value
+			allOutputGrain += output.Value
 		}
 		fmt.Println()
 
-		fmt.Printf("Fee:\t%d Sompi\n\n", allInputSompi-allOutputSompi)
+		fmt.Printf("Fee:\t%d Grain\n\n", allInputGrain-allOutputGrain)
 	}
 
 	return nil

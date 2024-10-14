@@ -193,7 +193,7 @@ func (s *server) createSplitTransaction(transaction *serialization.PartiallySign
 	changeAddress util.Address, startIndex int, endIndex int) (*serialization.PartiallySignedTransaction, error) {
 
 	selectedUTXOs := make([]*libouncewallet.UTXO, 0, endIndex-startIndex)
-	totalSompi := uint64(0)
+	totalGrain := uint64(0)
 
 	for i := startIndex; i < endIndex && i < len(transaction.PartiallySignedInputs); i++ {
 		partiallySignedInput := transaction.PartiallySignedInputs[i]
@@ -205,14 +205,14 @@ func (s *server) createSplitTransaction(transaction *serialization.PartiallySign
 			DerivationPath: partiallySignedInput.DerivationPath,
 		})
 
-		totalSompi += selectedUTXOs[i-startIndex].UTXOEntry.Amount()
-		totalSompi -= feePerInput
+		totalGrain += selectedUTXOs[i-startIndex].UTXOEntry.Amount()
+		totalGrain -= feePerInput
 	}
 	unsignedTransactionBytes, err := libouncewallet.CreateUnsignedTransaction(s.keysFile.ExtendedPublicKeys,
 		s.keysFile.MinimumSignatures,
 		[]*libouncewallet.Payment{{
 			Address: changeAddress,
-			Amount:  totalSompi,
+			Amount:  totalGrain,
 		}}, selectedUTXOs)
 	if err != nil {
 		return nil, err

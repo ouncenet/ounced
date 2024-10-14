@@ -6053,8 +6053,8 @@ type GetCoinSupplyResponseMessage struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	MaxSompi         uint64    `protobuf:"varint,1,opt,name=maxSompi,proto3" json:"maxSompi,omitempty"` // note: this is a hard coded maxSupply, actual maxSupply is expected to deviate by upto -5%, but cannot be measured exactly.
-	CirculatingSompi uint64    `protobuf:"varint,2,opt,name=circulatingSompi,proto3" json:"circulatingSompi,omitempty"`
+	MaxGrain         uint64    `protobuf:"varint,1,opt,name=maxGrain,proto3" json:"maxGrain,omitempty"` // note: this is a hard coded maxSupply, actual maxSupply is expected to deviate by upto -5%, but cannot be measured exactly.
+	CirculatingGrain uint64    `protobuf:"varint,2,opt,name=circulatingGrain,proto3" json:"circulatingGrain,omitempty"`
 	Error            *RPCError `protobuf:"bytes,1000,opt,name=error,proto3" json:"error,omitempty"`
 }
 
@@ -6090,16 +6090,16 @@ func (*GetCoinSupplyResponseMessage) Descriptor() ([]byte, []int) {
 	return file_rpc_proto_rawDescGZIP(), []int{107}
 }
 
-func (x *GetCoinSupplyResponseMessage) GetMaxSompi() uint64 {
+func (x *GetCoinSupplyResponseMessage) GetMaxGrain() uint64 {
 	if x != nil {
-		return x.MaxSompi
+		return x.MaxGrain
 	}
 	return 0
 }
 
-func (x *GetCoinSupplyResponseMessage) GetCirculatingSompi() uint64 {
+func (x *GetCoinSupplyResponseMessage) GetCirculatingGrain() uint64 {
 	if x != nil {
-		return x.CirculatingSompi
+		return x.CirculatingGrain
 	}
 	return 0
 }

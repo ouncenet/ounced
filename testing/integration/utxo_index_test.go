@@ -55,19 +55,19 @@ func TestUTXOIndex(t *testing.T) {
 		t.Fatalf("Error Retriving Coin supply: %s", err)
 	}
 
-	rewardsMinedSompi := uint64(blockAmountToMine * constants.SompiPerOunce * 500)
+	rewardsMinedGrain := uint64(blockAmountToMine * constants.GrainPerOunce * 500)
 	getBlockCountResponse, err := kaspad.rpcClient.GetBlockCount()
 	if err != nil {
 		t.Fatalf("Error Retriving BlockCount: %s", err)
 	}
-	rewardsMinedViaBlockCountSompi := uint64(
-		(getBlockCountResponse.BlockCount - 2) * constants.SompiPerOunce * 500, // -2 because of genesis and virtual.
+	rewardsMinedViaBlockCountGrain := uint64(
+		(getBlockCountResponse.BlockCount - 2) * constants.GrainPerOunce * 500, // -2 because of genesis and virtual.
 	)
 
-	if getCoinSupplyResponse.CirculatingSompi != rewardsMinedSompi {
-		t.Fatalf("Error: Circulating supply Mismatch - Circulating Sompi: %d Sompi Mined: %d", getCoinSupplyResponse.CirculatingSompi, rewardsMinedSompi)
-	} else if getCoinSupplyResponse.CirculatingSompi != rewardsMinedViaBlockCountSompi {
-		t.Fatalf("Error: Circulating supply Mismatch - Circulating Sompi: %d Sompi Mined via Block count: %d", getCoinSupplyResponse.CirculatingSompi, rewardsMinedViaBlockCountSompi)
+	if getCoinSupplyResponse.CirculatingGrain != rewardsMinedGrain {
+		t.Fatalf("Error: Circulating supply Mismatch - Circulating Grain: %d Grain Mined: %d", getCoinSupplyResponse.CirculatingGrain, rewardsMinedGrain)
+	} else if getCoinSupplyResponse.CirculatingGrain != rewardsMinedViaBlockCountGrain {
+		t.Fatalf("Error: Circulating supply Mismatch - Circulating Grain: %d Grain Mined via Block count: %d", getCoinSupplyResponse.CirculatingGrain, rewardsMinedViaBlockCountGrain)
 	}
 
 	// Collect the UTXO and make sure there's nothing in Removed

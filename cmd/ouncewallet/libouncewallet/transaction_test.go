@@ -312,13 +312,13 @@ func TestP2PK(t *testing.T) {
 	})
 }
 
-func TestMaxSompi(t *testing.T) {
+func TestMaxGrain(t *testing.T) {
 	testutils.ForAllNets(t, true, func(t *testing.T, consensusConfig *consensus.Config) {
 		params := &consensusConfig.Params
 		cfg := *consensusConfig
 		cfg.BlockCoinbaseMaturity = 0
-		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.SompiPerOunce
-		tc, teardown, err := consensus.NewFactory().NewTestConsensus(&cfg, "TestMaxSompi")
+		cfg.PreDeflationaryPhaseBaseSubsidy = 20e6 * constants.GrainPerOunce
+		tc, teardown, err := consensus.NewFactory().NewTestConsensus(&cfg, "TestMaxGrain")
 		if err != nil {
 			t.Fatalf("Error setting up tc: %+v", err)
 		}
@@ -479,7 +479,7 @@ func TestMaxSompi(t *testing.T) {
 		unsignedTxWithLargeInputAndOutputAmount, err := libouncewallet.CreateUnsignedTransaction(publicKeys, minimumSignatures,
 			[]*libouncewallet.Payment{{
 				Address: address,
-				Amount:  22e6 * constants.SompiPerOunce,
+				Amount:  22e6 * constants.GrainPerOunce,
 			}}, selectedUTXOsForTxWithLargeInputAndOutputAmount)
 		if err != nil {
 			t.Fatalf("CreateUnsignedTransactions: %+v", err)

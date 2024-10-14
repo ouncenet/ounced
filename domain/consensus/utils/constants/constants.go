@@ -12,11 +12,11 @@ const (
 	// MaxScriptPublicKeyVersion is the current latest supported public key script version.
 	MaxScriptPublicKeyVersion uint16 = 0
 
-	// SompiPerOunce is the number of sompi in one ounce (1 OZ).
-	SompiPerOunce = 100_000_000
+	// GrainPerOunce is the number of grain in one ounce (1 OZ).
+	GrainPerOunce = 100_000_000
 
-	// MaxSompi is the maximum transaction amount allowed in sompi.
-	MaxSompi = uint64(29_000_000_000 * SompiPerOunce)
+	// MaxGrain is the maximum transaction amount allowed in grain.
+	MaxGrain = uint64(29_000_000_000 * GrainPerOunce)
 
 	// MaxTxInSequenceNum is the maximum sequence number the sequence field
 	// of a transaction input can be.

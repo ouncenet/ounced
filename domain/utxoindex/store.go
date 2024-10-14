@@ -119,7 +119,7 @@ func (uis *utxoIndexStore) commit() error {
 	}
 	defer dbTransaction.RollbackUnlessClosed()
 
-	toRemoveSompiSupply := uint64(0)
+	toRemoveGrainSupply := uint64(0)
 
 	for scriptPublicKeyString, toRemoveUTXOOutpointEntryPairs := range uis.toRemove {
 		scriptPublicKey := externalapi.NewScriptPublicKeyFromString(string(scriptPublicKeyString))
@@ -133,11 +133,11 @@ func (uis *utxoIndexStore) commit() error {
 			if err != nil {
 				return err
 			}
-			toRemoveSompiSupply = toRemoveSompiSupply + utxoEntryToRemove.Amount()
+			toRemoveGrainSupply = toRemoveGrainSupply + utxoEntryToRemove.Amount()
 		}
 	}
 
-	toAddSompiSupply := uint64(0)
+	toAddGrainSupply := uint64(0)
 
 	for scriptPublicKeyString, toAddUTXOOutpointEntryPairs := range uis.toAdd {
 		scriptPublicKey := externalapi.NewScriptPublicKeyFromString(string(scriptPublicKeyString))
@@ -155,7 +155,7 @@ func (uis *utxoIndexStore) commit() error {
 			if err != nil {
 				return err
 			}
-			toAddSompiSupply = toAddSompiSupply + utxoEntryToAdd.Amount()
+			toAddGrainSupply = toAddGrainSupply + utxoEntryToAdd.Amount()
 		}
 	}
 
@@ -165,7 +165,7 @@ func (uis *utxoIndexStore) commit() error {
 		return err
 	}
 
-	err = uis.updateCirculatingSompiSupply(dbTransaction, toAddSompiSupply, toRemoveSompiSupply)
+	err = uis.updateCirculatingGrainSupply(dbTransaction, toAddGrainSupply, toRemoveGrainSupply)
 	if err != nil {
 		return err
 	}
@@ -180,7 +180,7 @@ func (uis *utxoIndexStore) commit() error {
 }
 
 func (uis *utxoIndexStore) addAndCommitOutpointsWithoutTransaction(utxoPairs []*externalapi.OutpointAndUTXOEntryPair) error {
-	toAddSompiSupply := uint64(0)
+	toAddGrainSupply := uint64(0)
 	for _, pair := range utxoPairs {
 		bucket := uis.bucketForScriptPublicKey(pair.UTXOEntry.ScriptPublicKey())
 		key, err := uis.convertOutpointToKey(bucket, pair.Outpoint)
@@ -197,10 +197,10 @@ func (uis *utxoIndexStore) addAndCommitOutpointsWithoutTransaction(utxoPairs []*
 		if err != nil {
 			return err
 		}
-		toAddSompiSupply = toAddSompiSupply + pair.UTXOEntry.Amount()
+		toAddGrainSupply = toAddGrainSupply + pair.UTXOEntry.Amount()
 	}
 
-	err := uis.updateCirculatingSompiSupplyWithoutTransaction(toAddSompiSupply, uint64(0))
+	err := uis.updateCirculatingGrainSupplyWithoutTransaction(toAddGrainSupply, uint64(0))
 	if err != nil {
 		return err
 	}
@@ -343,7 +343,7 @@ func (uis *utxoIndexStore) deleteAll() error {
 	return nil
 }
 
-func (uis *utxoIndexStore) initializeCirculatingSompiSupply() error {
+func (uis *utxoIndexStore) initializeCirculatingGrainSupply() error {
 
 	cursor, err := uis.database.Cursor(utxoIndexBucket)
 	if err != nil {
@@ -351,7 +351,7 @@ func (uis *utxoIndexStore) initializeCirculatingSompiSupply() error {
 	}
 	defer cursor.Close()
 
-	circulatingSompiSupplyInDatabase := uint64(0)
+	circulatingGrainSupplyInDatabase := uint64(0)
 	for cursor.Next() {
 		serializedUTXOEntry, err := cursor.Value()
 		if err != nil {
@@ -362,12 +362,12 @@ func (uis *utxoIndexStore) initializeCirculatingSompiSupply() error {
 			return err
 		}
 
-		circulatingSompiSupplyInDatabase = circulatingSompiSupplyInDatabase + utxoEntry.Amount()
+		circulatingGrainSupplyInDatabase = circulatingGrainSupplyInDatabase + utxoEntry.Amount()
 	}
 
 	err = uis.database.Put(
 		circulatingSupplyKey,
-		binaryserialization.SerializeUint64(circulatingSompiSupplyInDatabase),
+		binaryserialization.SerializeUint64(circulatingGrainSupplyInDatabase),
 	)
 
 	if err != nil {
@@ -377,8 +377,8 @@ func (uis *utxoIndexStore) initializeCirculatingSompiSupply() error {
 	return nil
 }
 
-func (uis *utxoIndexStore) updateCirculatingSompiSupply(dbTransaction database.Transaction, toAddSompiSupply uint64, toRemoveSompiSupply uint64) error {
-	if toAddSompiSupply != toRemoveSompiSupply {
+func (uis *utxoIndexStore) updateCirculatingGrainSupply(dbTransaction database.Transaction, toAddGrainSupply uint64, toRemoveGrainSupply uint64) error {
+	if toAddGrainSupply != toRemoveGrainSupply {
 		circulatingSupplyBytes, err := dbTransaction.Get(circulatingSupplyKey)
 		if err != nil {
 			return err
@@ -390,7 +390,7 @@ func (uis *utxoIndexStore) updateCirculatingSompiSupply(dbTransaction database.T
 		}
 		err = dbTransaction.Put(
 			circulatingSupplyKey,
-			binaryserialization.SerializeUint64(circulatingSupply+toAddSompiSupply-toRemoveSompiSupply),
+			binaryserialization.SerializeUint64(circulatingSupply+toAddGrainSupply-toRemoveGrainSupply),
 		)
 		if err != nil {
 			return err
@@ -399,8 +399,8 @@ func (uis *utxoIndexStore) updateCirculatingSompiSupply(dbTransaction database.T
 	return nil
 }
 
-func (uis *utxoIndexStore) updateCirculatingSompiSupplyWithoutTransaction(toAddSompiSupply uint64, toRemoveSompiSupply uint64) error {
-	if toAddSompiSupply != toRemoveSompiSupply {
+func (uis *utxoIndexStore) updateCirculatingGrainSupplyWithoutTransaction(toAddGrainSupply uint64, toRemoveGrainSupply uint64) error {
+	if toAddGrainSupply != toRemoveGrainSupply {
 		circulatingSupplyBytes, err := uis.database.Get(circulatingSupplyKey)
 		if err != nil {
 			return err
@@ -412,7 +412,7 @@ func (uis *utxoIndexStore) updateCirculatingSompiSupplyWithoutTransaction(toAddS
 		}
 		err = uis.database.Put(
 			circulatingSupplyKey,
-			binaryserialization.SerializeUint64(circulatingSupply+toAddSompiSupply-toRemoveSompiSupply),
+			binaryserialization.SerializeUint64(circulatingSupply+toAddGrainSupply-toRemoveGrainSupply),
 		)
 		if err != nil {
 			return err
@@ -421,7 +421,7 @@ func (uis *utxoIndexStore) updateCirculatingSompiSupplyWithoutTransaction(toAddS
 	return nil
 }
 
-func (uis *utxoIndexStore) getCirculatingSompiSupply() (uint64, error) {
+func (uis *utxoIndexStore) getCirculatingGrainSupply() (uint64, error) {
 	if uis.isAnythingStaged() {
 		return 0, errors.Errorf("cannot get circulatingSupply while staging isn't empty")
 	}

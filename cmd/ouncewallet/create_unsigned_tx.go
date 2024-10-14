@@ -20,7 +20,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	sendAmountSompi, err := utils.KasToSompi(conf.SendAmount)
+	sendAmountGrain, err := utils.KasToGrain(conf.SendAmount)
 
 	if err != nil {
 		return err
@@ -29,7 +29,7 @@ func createUnsignedTransaction(conf *createUnsignedTransactionConfig) error {
 	response, err := daemonClient.CreateUnsignedTransactions(ctx, &pb.CreateUnsignedTransactionsRequest{
 		From:                     conf.FromAddresses,
 		Address:                  conf.ToAddress,
-		Amount:                   sendAmountSompi,
+		Amount:                   sendAmountGrain,
 		IsSendAll:                conf.IsSendAll,
 		UseExistingChangeAddress: conf.UseExistingChangeAddress,
 	})

@@ -33,9 +33,9 @@ func send(conf *sendConfig) error {
 	ctx, cancel := context.WithTimeout(context.Background(), daemonTimeout)
 	defer cancel()
 
-	var sendAmountSompi uint64
+	var sendAmountGrain uint64
 	if !conf.IsSendAll {
-		sendAmountSompi, err = utils.KasToSompi(conf.SendAmount)
+		sendAmountGrain, err = utils.KasToGrain(conf.SendAmount)
 
 		if err != nil {
 			return err
@@ -46,7 +46,7 @@ func send(conf *sendConfig) error {
 		daemonClient.CreateUnsignedTransactions(ctx, &pb.CreateUnsignedTransactionsRequest{
 			From:                     conf.FromAddresses,
 			Address:                  conf.ToAddress,
-			Amount:                   sendAmountSompi,
+			Amount:                   sendAmountGrain,
 			IsSendAll:                conf.IsSendAll,
 			UseExistingChangeAddress: conf.UseExistingChangeAddress,
 		})

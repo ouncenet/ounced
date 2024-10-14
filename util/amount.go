@@ -25,11 +25,11 @@ const (
 	AmountOZ       AmountUnit = 0
 	AmountMilliOZ  AmountUnit = -3
 	AmountMicroμOZ AmountUnit = -6
-	AmountSompi    AmountUnit = -8
+	AmountGrain    AmountUnit = -8
 )
 
 // String returns the unit as a string. For recognized units, the SI
-// prefix is used, or "Sompi" for the base unit. For all unrecognized
+// prefix is used, or "Grain" for the base unit. For all unrecognized
 // units, "1eN OZ" is returned, where N is the AmountUnit.
 func (u AmountUnit) String() string {
 	switch u {
@@ -43,15 +43,15 @@ func (u AmountUnit) String() string {
 		return "mOZ"
 	case AmountMicroμOZ:
 		return "μOZ"
-	case AmountSompi:
-		return "Sompi"
+	case AmountGrain:
+		return "Grain"
 	default:
 		return "1e" + strconv.FormatInt(int64(u), 10) + " OZ"
 	}
 }
 
 // Amount represents the base ounce monetary unit (colloquially referred
-// to as a `Sompi'). A single Amount is equal to 1e-8 of a ounce.
+// to as a `Grain'). A single Amount is equal to 1e-8 of a ounce.
 type Amount uint64
 
 // round converts a floating point number, which may or may not be representable
@@ -70,11 +70,11 @@ func round(f float64) Amount {
 // does not check that the amount is within the total amount of ounce
 // producible as f may not refer to an amount at a single moment in time.
 //
-// NewAmount is for specifically for converting OZ to Sompi.
-// For creating a new Amount with an int64 value which denotes a quantity of Sompi,
+// NewAmount is for specifically for converting OZ to Grain.
+// For creating a new Amount with an int64 value which denotes a quantity of Grain,
 // do a simple type conversion from type int64 to Amount.
 // TODO: Refactor NewAmount. When amounts are more than 1e9 OZ, the precision
-// can be higher than one sompi (1e9 and 1e9+1e-8 will result as the same number)
+// can be higher than one grain (1e9 and 1e9+1e-8 will result as the same number)
 func NewAmount(f float64) (Amount, error) {
 	// The amount is only considered invalid if it cannot be represented
 	// as an integer type. This may happen if f is NaN or +-Infinity.
@@ -87,7 +87,7 @@ func NewAmount(f float64) (Amount, error) {
 		return 0, errors.New("invalid ounce amount")
 	}
 
-	return round(f * constants.SompiPerOunce), nil
+	return round(f * constants.GrainPerOunce), nil
 }
 
 // ToUnit converts a monetary amount counted in ounce base units to a
@@ -104,7 +104,7 @@ func (a Amount) ToOZ() float64 {
 // Format formats a monetary amount counted in ounce base units as a
 // string for a given unit. The conversion will succeed for any unit,
 // however, known units will be formated with an appended label describing
-// the units with SI notation, or "Sompi" for the base unit.
+// the units with SI notation, or "Grain" for the base unit.
 func (a Amount) Format(u AmountUnit) string {
 	units := " " + u.String()
 	return strconv.FormatFloat(a.ToUnit(u), 'f', -int(u+8), 64) + units

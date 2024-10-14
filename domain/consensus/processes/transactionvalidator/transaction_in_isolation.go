@@ -67,35 +67,35 @@ func (v *transactionValidator) checkTransactionAmountRanges(tx *externalapi.Doma
 	// output must not be negative or more than the max allowed per
 	// transaction. Also, the total of all outputs must abide by the same
 	// restrictions. All amounts in a transaction are in a unit value known
-	// as a sompi. One ounce is a quantity of sompi as defined by the
-	// sompiPerOunce constant.
-	var totalSompi uint64
+	// as a grain. One ounce is a quantity of grain as defined by the
+	// grainPerOunce constant.
+	var totalGrain uint64
 	for _, txOut := range tx.Outputs {
-		sompi := txOut.Value
-		if sompi == 0 {
+		grain := txOut.Value
+		if grain == 0 {
 			return errors.Wrap(ruleerrors.ErrTxOutValueZero, "zero value outputs are forbidden")
 		}
 
-		if sompi > constants.MaxSompi {
+		if grain > constants.MaxGrain {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "transaction output value of %d is "+
-				"higher than max allowed value of %d", sompi, constants.MaxSompi)
+				"higher than max allowed value of %d", grain, constants.MaxGrain)
 		}
 
 		// Binary arithmetic guarantees that any overflow is detected and reported.
 		// This is impossible for Ounce, but perhaps possible if an alt increases
 		// the total money supply.
-		newTotalSompi := totalSompi + sompi
-		if newTotalSompi < totalSompi {
+		newTotalGrain := totalGrain + grain
+		if newTotalGrain < totalGrain {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 				"outputs exceeds max allowed value of %d",
-				constants.MaxSompi)
+				constants.MaxGrain)
 		}
-		totalSompi = newTotalSompi
-		if totalSompi > constants.MaxSompi {
+		totalGrain = newTotalGrain
+		if totalGrain > constants.MaxGrain {
 			return errors.Wrapf(ruleerrors.ErrBadTxOutValue, "total value of all transaction "+
 				"outputs is %d which is higher than max "+
-				"allowed value of %d", totalSompi,
-				constants.MaxSompi)
+				"allowed value of %d", totalGrain,
+				constants.MaxGrain)
 		}
 	}
 

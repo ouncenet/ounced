@@ -15,14 +15,14 @@ func HandleGetCoinSupply(context *rpccontext.Context, _ *router.Router, _ appmes
 		return errorMessage, nil
 	}
 
-	circulatingSompiSupply, err := context.UTXOIndex.GetCirculatingSompiSupply()
+	circulatingGrainSupply, err := context.UTXOIndex.GetCirculatingGrainSupply()
 	if err != nil {
 		return nil, err
 	}
 
 	response := appmessage.NewGetCoinSupplyResponseMessage(
-		constants.MaxSompi,
-		circulatingSompiSupply,
+		constants.MaxGrain,
+		circulatingGrainSupply,
 	)
 
 	return response, nil

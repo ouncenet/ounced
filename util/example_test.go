@@ -12,17 +12,17 @@ import (
 func ExampleAmount() {
 
 	a := util.Amount(0)
-	fmt.Println("Zero Sompi:", a)
+	fmt.Println("Zero Grain:", a)
 
 	a = util.Amount(1e8)
-	fmt.Println("100,000,000 Sompi:", a)
+	fmt.Println("100,000,000 Grain:", a)
 
 	a = util.Amount(1e5)
-	fmt.Println("100,000 Sompi:", a)
+	fmt.Println("100,000 Grain:", a)
 	// Output:
-	// Zero Sompi: 0 OZ
-	// 100,000,000 Sompi: 1 OZ
-	// 100,000 Sompi: 0.001 OZ
+	// Zero Grain: 0 OZ
+	// 100,000,000 Grain: 1 OZ
+	// 100,000 Grain: 0.001 OZ
 }
 
 func ExampleNewAmount() {
@@ -63,18 +63,18 @@ func ExampleNewAmount() {
 func ExampleAmount_unitConversions() {
 	amount := util.Amount(44433322211100)
 
-	fmt.Println("Sompi to kOZ:", amount.Format(util.AmountKiloOZ))
-	fmt.Println("Sompi to OZ:", amount)
-	fmt.Println("Sompi to MilliOZ:", amount.Format(util.AmountMilliOZ))
-	fmt.Println("Sompi to MicroμOZ:", amount.Format(util.AmountMicroμOZ))
-	fmt.Println("Sompi to Sompi:", amount.Format(util.AmountSompi))
+	fmt.Println("Grain to kOZ:", amount.Format(util.AmountKiloOZ))
+	fmt.Println("Grain to OZ:", amount)
+	fmt.Println("Grain to MilliOZ:", amount.Format(util.AmountMilliOZ))
+	fmt.Println("Grain to MicroμOZ:", amount.Format(util.AmountMicroμOZ))
+	fmt.Println("Grain to Grain:", amount.Format(util.AmountGrain))
 
 	// Output:
-	// Sompi to kOZ: 444.333222111 kOZ
-	// Sompi to OZ: 444333.222111 OZ
-	// Sompi to MilliOZ: 444333222.111 mOZ
-	// Sompi to MicroμOZ: 444333222111 μOZ
-	// Sompi to Sompi: 44433322211100 Sompi
+	// Grain to kOZ: 444.333222111 kOZ
+	// Grain to OZ: 444333.222111 OZ
+	// Grain to MilliOZ: 444333222.111 mOZ
+	// Grain to MicroμOZ: 444333222111 μOZ
+	// Grain to Grain: 44433322211100 Grain
 }
 
 // This example demonstrates how to convert the compact "bits" in a block header
