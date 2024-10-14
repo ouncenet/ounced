@@ -215,25 +215,23 @@ var MainnetParams = Params{
 	DefaultPort: "16111",
 	DNSSeeds: []string{
 		// This DNS seeder is run by Wolfie
-		"mainnet-dnsseed.kas.pa",
+		"mainnet-dnsseed.oz.pa",
 		// This DNS seeder is run by Denis Mashkevich
-		"mainnet-dnsseed-1.kaspanet.org",
+		"mainnet-dnsseed-1.ouncenet.org",
 		// This DNS seeder is run by Denis Mashkevich
-		"mainnet-dnsseed-2.kaspanet.org",
-		// This DNS seeder is run by Constantine Bytensky
-		"dnsseed.cbytensky.org",
+		"mainnet-dnsseed-2.ouncenet.org",
 		// This DNS seeder is run by Georges Künzli
-		"seeder1.kaspad.net",
+		"seeder1.ounced.net",
 		// This DNS seeder is run by Georges Künzli
-		"seeder2.kaspad.net",
+		"seeder2.ounced.net",
 		// This DNS seeder is run by Georges Künzli
-		"seeder3.kaspad.net",
+		"seeder3.ounced.net",
 		// This DNS seeder is run by Georges Künzli
-		"seeder4.kaspad.net",
+		"seeder4.ounced.net",
 		// This DNS seeder is run by Tim
-		"kaspadns.kaspacalc.net",
+		"kaspadns.ounced.net",
 		// This DNS seeder is run by supertypo
-		"n-mainnet.kaspa.ws",
+		"n-mainnet.ounce.ws",
 	},
 
 	// DAG parameters
