@@ -8,4 +8,4 @@ import (
 	"github.com/ouncenet/ounced/infrastructure/logger"
 )
 
-var kasdLog = logger.RegisterSubSystem("KASD")
+var kasdLog = logger.RegisterSubSystem("OZD")

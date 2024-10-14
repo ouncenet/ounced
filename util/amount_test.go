@@ -102,40 +102,40 @@ func TestAmountUnitConversions(t *testing.T) {
 		s         string
 	}{
 		{
-			name:      "MKAS",
+			name:      "MOZ",
 			amount:    Amount(constants.MaxSompi),
-			unit:      AmountMegaKAS,
+			unit:      AmountMegaOZ,
 			converted: 29000,
-			s:         "29000 MKAS",
+			s:         "29000 MOZ",
 		},
 		{
-			name:      "kKAS",
+			name:      "kOZ",
 			amount:    44433322211100,
-			unit:      AmountKiloKAS,
+			unit:      AmountKiloOZ,
 			converted: 444.33322211100,
-			s:         "444.333222111 kKAS",
+			s:         "444.333222111 kOZ",
 		},
 		{
-			name:      "KAS",
+			name:      "OZ",
 			amount:    44433322211100,
-			unit:      AmountKAS,
+			unit:      AmountOZ,
 			converted: 444333.22211100,
-			s:         "444333.222111 KAS",
+			s:         "444333.222111 OZ",
 		},
 		{
-			name:      "mKAS",
+			name:      "mOZ",
 			amount:    44433322211100,
-			unit:      AmountMilliKAS,
+			unit:      AmountMilliOZ,
 			converted: 444333222.11100,
-			s:         "444333222.111 mKAS",
+			s:         "444333222.111 mOZ",
 		},
 		{
 
-			name:      "μKAS",
+			name:      "μOZ",
 			amount:    44433322211100,
-			unit:      AmountMicroKAS,
+			unit:      AmountMicroμOZ,
 			converted: 444333222111.00,
-			s:         "444333222111 μKAS",
+			s:         "444333222111 μOZ",
 		},
 		{
 
@@ -151,7 +151,7 @@ func TestAmountUnitConversions(t *testing.T) {
 			amount:    44433322211100,
 			unit:      AmountUnit(-1),
 			converted: 4443332.2211100,
-			s:         "4443332.22111 1e-1 KAS",
+			s:         "4443332.22111 1e-1 OZ",
 		},
 	}
 
@@ -168,18 +168,18 @@ func TestAmountUnitConversions(t *testing.T) {
 			continue
 		}
 
-		// Verify that Amount.ToKAS works as advertised.
-		f1 := test.amount.ToUnit(AmountKAS)
-		f2 := test.amount.ToKAS()
+		// Verify that Amount.ToOZ works as advertised.
+		f1 := test.amount.ToUnit(AmountOZ)
+		f2 := test.amount.ToOZ()
 		if f1 != f2 {
-			t.Errorf("%v: ToKAS does not match ToUnit(AmountKAS): %v != %v", test.name, f1, f2)
+			t.Errorf("%v: ToOZ does not match ToUnit(AmountOZ): %v != %v", test.name, f1, f2)
 		}
 
 		// Verify that Amount.String works as advertised.
-		s1 := test.amount.Format(AmountKAS)
+		s1 := test.amount.Format(AmountOZ)
 		s2 := test.amount.String()
 		if s1 != s2 {
-			t.Errorf("%v: String does not match Format(AmountKAS): %v != %v", test.name, s1, s2)
+			t.Errorf("%v: String does not match Format(AmountOZ): %v != %v", test.name, s1, s2)
 		}
 	}
 }
@@ -192,16 +192,16 @@ func TestAmountMulF64(t *testing.T) {
 		res  Amount
 	}{
 		{
-			name: "Multiply 0.1 KAS by 2",
-			amt:  100e5, // 0.1 KAS
+			name: "Multiply 0.1 OZ by 2",
+			amt:  100e5, // 0.1 OZ
 			mul:  2,
-			res:  200e5, // 0.2 KAS
+			res:  200e5, // 0.2 OZ
 		},
 		{
-			name: "Multiply 0.2 KAS by 0.02",
-			amt:  200e5, // 0.2 KAS
+			name: "Multiply 0.2 OZ by 0.02",
+			amt:  200e5, // 0.2 OZ
 			mul:  1.02,
-			res:  204e5, // 0.204 KAS
+			res:  204e5, // 0.204 OZ
 		},
 		{
 			name: "Round down",
@@ -217,9 +217,9 @@ func TestAmountMulF64(t *testing.T) {
 		},
 		{
 			name: "Multiply by 0.",
-			amt:  1e8, // 1 KAS
+			amt:  1e8, // 1 OZ
 			mul:  0,
-			res:  0, // 0 KAS
+			res:  0, // 0 OZ
 		},
 		{
 			name: "Multiply 1 by 0.5.",

@@ -16,7 +16,7 @@ func RunKaspadForTesting(t *testing.T, testName string, rpcAddress string) func(
 		t.Fatalf("TempDir: %s", err)
 	}
 
-	kaspadRunCommand, err := StartCmd("KASPAD",
+	kaspadRunCommand, err := StartCmd("OZPAD",
 		"kaspad",
 		NetworkCliArgumentFromNetParams(&dagconfig.DevnetParams),
 		"--appdir", appDir,
