@@ -89,8 +89,8 @@ func (f ServiceFlag) String() string {
 	return s
 }
 
-// KaspaNet represents which ounce network a message belongs to.
-type KaspaNet uint32
+// OunceNet represents which ounce network a message belongs to.
+type OunceNet uint32
 
 // Constants used to indicate the message ounce network. They can also be
 // used to seek to the next message when a stream's state is unknown, but
@@ -98,32 +98,32 @@ type KaspaNet uint32
 // better idea to simply disconnect clients that are misbehaving over TCP.
 const (
 	// Mainnet represents the main ounce network.
-	Mainnet KaspaNet = 0x3ddcf71d
+	Mainnet OunceNet = 0x3ddcf71d
 
 	// Testnet represents the test network.
-	Testnet KaspaNet = 0xddb8af8f
+	Testnet OunceNet = 0xddb8af8f
 
 	// Simnet represents the simulation test network.
-	Simnet KaspaNet = 0x374dcf1c
+	Simnet OunceNet = 0x374dcf1c
 
 	// Devnet represents the development test network.
-	Devnet KaspaNet = 0x732d87e1
+	Devnet OunceNet = 0x732d87e1
 )
 
 // bnStrings is a map of ounce networks back to their constant names for
 // pretty printing.
-var bnStrings = map[KaspaNet]string{
+var bnStrings = map[OunceNet]string{
 	Mainnet: "Mainnet",
 	Testnet: "Testnet",
 	Simnet:  "Simnet",
 	Devnet:  "Devnet",
 }
 
-// String returns the KaspaNet in human-readable form.
-func (n KaspaNet) String() string {
+// String returns the OunceNet in human-readable form.
+func (n OunceNet) String() string {
 	if s, ok := bnStrings[n]; ok {
 		return s
 	}
 
-	return fmt.Sprintf("Unknown KaspaNet (%d)", uint32(n))
+	return fmt.Sprintf("Unknown OunceNet (%d)", uint32(n))
 }

@@ -10,8 +10,8 @@ import (
 	"github.com/ouncenet/ounced/domain/consensus/utils/utxo"
 )
 
-// KaspawalletdUTXOsTolibouncewalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libouncewallet.UTXO
-func KaspawalletdUTXOsTolibouncewalletUTXOs(ouncewalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
+// OuncewalletdUTXOsTolibouncewalletUTXOs converts a  []*pb.UtxosByAddressesEntry to a []*libouncewallet.UTXO
+func OuncewalletdUTXOsTolibouncewalletUTXOs(ouncewalletdUtxoEntires []*pb.UtxosByAddressesEntry) ([]*UTXO, error) {
 	UTXOs := make([]*UTXO, len(ouncewalletdUtxoEntires))
 	for i, entry := range ouncewalletdUtxoEntires {
 		script, err := hex.DecodeString(entry.UtxoEntry.ScriptPublicKey.ScriptPublicKey)
@@ -41,8 +41,8 @@ func KaspawalletdUTXOsTolibouncewalletUTXOs(ouncewalletdUtxoEntires []*pb.UtxosB
 	return UTXOs, nil
 }
 
-// AppMessageUTXOToKaspawalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
-func AppMessageUTXOToKaspawalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
+// AppMessageUTXOToOuncewalletdUTXO converts an appmessage.UTXOsByAddressesEntry to a  pb.UtxosByAddressesEntry
+func AppMessageUTXOToOuncewalletdUTXO(appUTXOsByAddressesEntry *appmessage.UTXOsByAddressesEntry) *pb.UtxosByAddressesEntry {
 	return &pb.UtxosByAddressesEntry{
 		Outpoint: &pb.Outpoint{
 			TransactionId: appUTXOsByAddressesEntry.Outpoint.TransactionID,

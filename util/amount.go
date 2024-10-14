@@ -87,7 +87,7 @@ func NewAmount(f float64) (Amount, error) {
 		return 0, errors.New("invalid ounce amount")
 	}
 
-	return round(f * constants.SompiPerKaspa), nil
+	return round(f * constants.SompiPerOunce), nil
 }
 
 // ToUnit converts a monetary amount counted in ounce base units to a
