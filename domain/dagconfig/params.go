@@ -211,7 +211,7 @@ var MainnetParams = Params{
 	Name:        "ounce-mainnet",
 	Net:         appmessage.Mainnet,
 	RPCPort:     "16110",
-	DefaultPort: "16111",
+	DefaultPort: "32151",
 	DNSSeeds: []string{
 		// This DNS seeder is run by Wolfie
 		"mainnet-dnsseed.oz.pa",
@@ -295,7 +295,7 @@ var TestnetParams = Params{
 	Name:        "ounce-testnet",
 	Net:         appmessage.Testnet,
 	RPCPort:     "16210",
-	DefaultPort: "16211",
+	DefaultPort: "32251",
 	DNSSeeds: []string{
 		"testnet-10-dnsseed.kas.pa",
 		// This DNS seeder is run by Tiram
