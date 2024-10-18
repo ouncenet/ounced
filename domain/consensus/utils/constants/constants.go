@@ -16,7 +16,7 @@ const (
 	GrainPerOunce = 100_000_000
 
 	// MaxGrain is the maximum transaction amount allowed in grain.
-	MaxGrain = uint64(29_000_000_000 * GrainPerOunce)
+	MaxGrain = uint64(32_151_000 * GrainPerOunce)
 
 	// MaxTxInSequenceNum is the maximum sequence number the sequence field
 	// of a transaction input can be.

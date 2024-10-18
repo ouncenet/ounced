@@ -48,8 +48,8 @@ const (
 	// in block take longer)
 	defaultMergeSetSizeLimit                       = defaultGHOSTDAGK * 10
 	defaultSubsidyGenesisReward                    = 1 * constants.GrainPerOunce
-	defaultPreDeflationaryPhaseBaseSubsidy         = 500 * constants.GrainPerOunce
-	defaultDeflationaryPhaseBaseSubsidy            = 440 * constants.GrainPerOunce
+	defaultPreDeflationaryPhaseBaseSubsidy         = 2 * constants.GrainPerOunce
+	defaultDeflationaryPhaseBaseSubsidy            = 1 * constants.GrainPerOunce
 	defaultCoinbasePayloadScriptPublicKeyMaxLength = 150
 	// defaultDifficultyAdjustmentWindowSize is the number of blocks in a block's past used to calculate its difficulty
 	// target.
@@ -79,9 +79,9 @@ const (
 	// switches to the deflationary period. This number is calculated as follows:
 	// We define a year as 365.25 days
 	// Half a year in seconds = 365.25 / 2 * 24 * 60 * 60 = 15778800
-	// The network was down for three days shortly after launch
-	// Three days in seconds = 3 * 24 * 60 * 60 = 259200
-	defaultDeflationaryPhaseDaaScore = 15778800 - 259200
+	// 15778800 / 3 = 5259600 2 months Gold Rush
+
+	defaultDeflationaryPhaseDaaScore = 5259600
 
 	defaultMergeDepth = 3600
 )
